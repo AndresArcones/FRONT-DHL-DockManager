@@ -1,0 +1,99 @@
+<body>
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+ 
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img
+             src="https://images.assetsdelivery.com/compings_v2/krisdog/krisdog1605/krisdog160500076.jpg"
+             class="w-100 rounded-4 shadow-4"
+             alt=""
+             />
+      </div>
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div
+             class="card cascading-right"
+             style="
+                    background: hsla(0, 0%, 100%, 0.55);
+                    backdrop-filter: blur(30px);
+                    "
+             >
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Log in to SQUID</h2>
+            <form (ngSubmit) = "logIn()">
+              
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input [(ngModel)]="email"
+                      name="email"
+                       type="text"
+                       id="form3Example3"
+                       class="form-control"
+                       placeholder="email..."
+                       />
+                <label class="form-label" for="form3Example3"
+                       >Email address</label
+                  >
+              </div>
+ 
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input [(ngModel)]="password"
+                      name = "password"
+                       type="password"
+                       id="form3Example4"
+                       class="form-control"
+                       placeholder="password..."
+                       />
+                <label class="form-label" for="form3Example4"
+                       >Password</label
+                  >
+              </div>
+ 
+              <!-- Submit button -->
+              <button
+                      type="submit"
+                      class="btn btn-primary btn-block mb-4"
+                      >
+                Sign up
+              </button>
+ 
+              <!-- Register buttons -->
+              <div class="text-center">
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                      <p class="mb-0 me-2">Don't have an account?</p>
+                      <button routerLink="/register" type="button" class="btn btn-outline-primary">Create new</button>
+                    </div>
+                
+              </div>
+
+              <!-- <div class="text-center">
+                <div class="d-flex align-items-center justify-content-center pb-4">
+                    <button (click)="logOut()" type="button" class="btn btn-outline-primary">LogOut</button>
+                  </div>
+              
+            </div> -->
+            </form>
+          </div>
+        </div>
+      </div>
+ 
+      
+    </div>
+  </div>
+  <!-- Jumbotron -->
+ </section>
+ <!-- Section: Design Block -->
+ </body>

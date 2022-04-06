@@ -1,0 +1,70 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+
+  </style>
+
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+                      background: hsla(0, 0%, 100%, 0.55);
+                      backdrop-filter: blur(30px);
+                      ">
+
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Register to SQUID</h2>
+            <form (ngSubmit)="register()">
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input [(ngModel)]="newUsuario.usuario" name="email" type="text" id="form3Example3"
+                  class="form-control" />
+                <label class="form-label" for="form3Example3">Email address</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input [(ngModel)]="newUsuario.contrasenia" name="password" type="password" id="form3Example4"
+                  class="form-control" />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign up
+              </button>
+
+              <div class="col">
+                <!-- back to login button -->
+                <button routerLink="" type="button" class="btn btn-outline-primary">
+                  Back to Log In
+                </button>
+
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="https://images.assetsdelivery.com/compings_v2/krisdog/krisdog1605/krisdog160500076.jpg"
+          class="w-100 rounded-4 shadow-4" alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->

@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material/' as mat;
+
+@include mat.core();
+
+.crop { 
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow:ellipsis; 
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+/* For use in src/lib/core/theming/_palette.scss */
+$my-primary-palette: (
+    50 : #fff9e0,
+    100 : #fff0b3,
+    200 : #ffe680,
+    300 : #ffdb4d,
+    400 : #ffd426,
+    500 : #ffcc00,
+    600 : #ffc700,
+    700 : #ffc000,
+    800 : #ffb900,
+    900 : #ffad00,
+    A100 : #ffffff,
+    A200 : #fffaf2,
+    A400 : #ffe8bf,
+    A700 : #ffdfa6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$my-accent-palette: (
+    50 : #fae1e2,
+    100 : #f2b4b8,
+    200 : #ea8288,
+    300 : #e15058,
+    400 : #da2b35,
+    500 : #d40511,
+    600 : #cf040f,
+    700 : #c9040c,
+    800 : #c3030a,
+    900 : #b90105,
+    A100 : #ffe2e2,
+    A200 : #ffafb0,
+    A400 : #ff7c7d,
+    A700 : #ff6364,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+
+
+$my-primary: mat.define-palette($my-primary-palette);
+$my-accent: mat.define-palette($my-accent-palette);
+
+$my-theme: mat.define-dark-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+ )
+));
+
+@include mat.all-component-themes($my-theme);
