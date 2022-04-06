@@ -28,6 +28,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MuellesComponent } from './components/muelles/muelles.component';
+import { DetalleMuelleComponent } from './components/detalle-muelle/detalle-muelle.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -40,6 +43,8 @@ import { MatDividerModule } from '@angular/material/divider';
     SidebarComponent,
     HeaderComponent,
     FooterComponent,
+    MuellesComponent,
+    DetalleMuelleComponent,
 
   ],
   imports: [
@@ -63,7 +68,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSelectModule
 
   ],
   providers: [

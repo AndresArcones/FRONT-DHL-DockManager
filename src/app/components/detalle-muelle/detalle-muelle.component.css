@@ -1,0 +1,11 @@
+mat-form-field{
+    margin: 1vw;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+button:hover{
+  background-color: #d4050f7c;;
+}

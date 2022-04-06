@@ -4,6 +4,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
 import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { AutenticacionService } from '../../services/autenticacion.service';
+import { RetieveUsuarioDto } from 'src/app/interfaces/retrieve-usuario-dto';
 
 @UntilDestroy()
 @Component({
@@ -15,7 +17,16 @@ export class HomeComponent {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  constructor(private observer: BreakpointObserver, private router: Router) { }
+  usuario: RetieveUsuarioDto = new RetieveUsuarioDto();
+
+  constructor(private observer: BreakpointObserver, private router: Router, public auth: AutenticacionService) {
+    this.auth.retrieveUser()
+      .subscribe(resp => {
+        this.usuario = resp.body!
+      })
+
+
+  }
 
   ngAfterViewInit() {
     this.observer

@@ -5,9 +5,6 @@ export interface RetieveUsuarioDtoInter {
     usuario:          string;
     contrasenia:      string;
     roles:            Role[];
-    idVideos:         string[];
-    idVideosLiked:    any[];
-    idVideosDisliked: any[];
 }
 
 export class RetieveUsuarioDto implements RetieveUsuarioDtoInter {
@@ -17,9 +14,6 @@ export class RetieveUsuarioDto implements RetieveUsuarioDtoInter {
     usuario:          string;
     contrasenia:      string;
     roles:            Role[];
-    idVideos:         string[];
-    idVideosLiked:    any[];
-    idVideosDisliked: any[];
 
     constructor(){
     this.id = "",
@@ -27,10 +21,7 @@ export class RetieveUsuarioDto implements RetieveUsuarioDtoInter {
     this.apellidos="",
     this.usuario="",
     this.contrasenia="",
-    this.roles= [],
-    this.idVideos=[],
-    this.idVideosLiked= [],
-    this.idVideosDisliked= []
+    this.roles= []
     }
 }
 

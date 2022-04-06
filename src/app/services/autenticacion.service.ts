@@ -1,8 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { RetieveUsuarioDto } from '../interfaces/retrieve-usuario-dto';
 
 
 @Injectable({
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class AutenticacionService {
 
   private _urlEndpoint: string = "http://localhost:8080/api/login"
+  private _urlEndpointUser: string = "http://localhost:8080/api/user"
+
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -24,7 +27,7 @@ export class AutenticacionService {
 
   logOut() {
     localStorage.clear();
-    this.router.navigate(["login"]);
+    this.router.navigate([""]);
     Swal.fire("Log Out", "You correctly logged out", "success")
 
   }
@@ -37,6 +40,10 @@ export class AutenticacionService {
       return false;
     }
     return roles.includes(rol);
+  }
+
+  retrieveUser(): Observable<HttpResponse<RetieveUsuarioDto>> {
+    return this.http.get<RetieveUsuarioDto>(this._urlEndpointUser + "/" + localStorage.getItem("usuario"), { observe: "response" });
   }
 
 
