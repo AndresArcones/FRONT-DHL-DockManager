@@ -4,21 +4,19 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 g-3">
       <div *ngFor="let muelle of muelles" style="cursor:pointer;" class="col animate__animated animate__fadeIn">
         <div class="card shadow-sm">
-
-          <img (click)="openMuelle(muelle.id)" *ngIf="muelle.estado === 'disponible'" src=".\assets\imagen_verde.jpg"
+          <h1 style=" margin: auto; text-align: center; color: white;">Muelle: {{muelle.nombre}}
+          </h1>
+          <img (click)="openMuelle(muelle.id)" *ngIf="muelle.estado === 'disponible'" src=".\assets\muelle.jpg"
             alt="">
-          
-          <img *ngIf="muelle.estado === 'no disponible'" src=".\assets\imagen_roja.jpg" alt="">
-          <div style="padding: 5%; position: fixed;">
-            <h1 style=" text-align: center; color: black;">Muelle: {{muelle.nombre}}</h1>
-          </div>
+          <img *ngIf="muelle.estado === 'no disponible'" src=".\assets\muelleRojo.jpg" alt="">
+
           
           <div class="card-body">
             <h3 (click)="openMuelle(muelle.id)" class="card-text">
               {{ (muelle.tipoMuelle | titlecase) + " | " + (muelle.tipoCamion | titlecase) }}
             </h3>
             <h3 (click)="openMuelle(muelle.id)" class="card-text">
-              {{ "Apertura-Cierre: " + muelle.aperturaMuelle+"-" + calcularHoraMuelle(muelle)}}
+              {{ "Apertura-Cierre: " + muelle.aperturaMuelle+ "-" + calcularHoraMuelle(muelle)}}
             </h3>
             <div class="d-flex justify-content-between align-items-center">
               <small class="text-muted">{{muelle.estado}}</small>
