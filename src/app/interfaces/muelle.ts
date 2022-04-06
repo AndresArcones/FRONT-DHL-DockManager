@@ -1,25 +1,31 @@
 export interface MuelleInt {
     id: string
+    nombre: string
     tipoMuelle: string;
     tipoCamion: string;
-    horario: string;
+    aperturaMuelle: number;
+    numeroTramosReserva: number;
     estado: string;
 
 }
 
 export class Muelle implements MuelleInt {
     id: string;
+    nombre: string
     tipoMuelle: string;
     tipoCamion: string;
-    horario: string;
+    aperturaMuelle: number; //cuando abre el muelle
+    numeroTramosReserva: number; //numero de tramos (horas) de reserva
     estado: string;
     reservas: Reserva[]
 
     constructor() {
         this.id = ""
+        this.nombre = ""
         this.tipoMuelle = ""
         this.tipoCamion = ""
-        this.horario = ""
+        this.aperturaMuelle = -1
+        this.numeroTramosReserva = -1
         this.estado = ""
         this.reservas = []
     }

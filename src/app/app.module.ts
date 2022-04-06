@@ -31,6 +31,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MuellesComponent } from './components/muelles/muelles.component';
 import { DetalleMuelleComponent } from './components/detalle-muelle/detalle-muelle.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ReservasComponent } from './components/reservas/reservas.component';
+import { MatTableModule } from '@angular/material/table'
 
 
 
@@ -45,6 +47,7 @@ import { MatSelectModule } from '@angular/material/select';
     FooterComponent,
     MuellesComponent,
     DetalleMuelleComponent,
+    ReservasComponent,
 
   ],
   imports: [
@@ -69,7 +72,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSidenavModule,
     MatIconModule,
     MatDividerModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
 
   ],
   providers: [

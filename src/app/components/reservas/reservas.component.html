@@ -1,0 +1,56 @@
+<table mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.id}} </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="nombreMuelle">
+    <th mat-header-cell *matHeaderCellDef> nombreMuelle </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.nombreMuelle}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="dni">
+    <th mat-header-cell *matHeaderCellDef> dni </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.dni}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="matricula">
+    <th mat-header-cell *matHeaderCellDef> matricula </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.matricula}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="idPedido">
+    <th mat-header-cell *matHeaderCellDef> idPedido </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.idPedido}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="actividad">
+    <th mat-header-cell *matHeaderCellDef> actividad </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.actividad}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="fechaHoraReserva">
+    <th mat-header-cell *matHeaderCellDef> fechaHoraReserva </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.fechaHoraReserva}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="tipoCamion">
+    <th mat-header-cell *matHeaderCellDef> tipoCamion </th>
+    <td mat-cell *matCellDef="let reserva"> {{reserva.tipoCamion}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

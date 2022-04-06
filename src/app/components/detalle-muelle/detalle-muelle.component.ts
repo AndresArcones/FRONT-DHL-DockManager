@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Muelle } from 'src/app/interfaces/muelle';
 import Swal from 'sweetalert2';
 import { MuelleService } from '../../services/muelles.service';
+import { Reserva } from '../../interfaces/muelle';
+import { ReservaDto } from '../../interfaces/reserva-dto';
+import { ReservasService } from 'src/app/services/reservas.service';
 
 @Component({
   selector: 'app-detalle-muelle',
@@ -17,13 +20,16 @@ export class DetalleMuelleComponent implements OnInit {
   horarios: number = 0;
 
   muelle: Muelle = new Muelle();
+  reserva: ReservaDto = new ReservaDto();
 
-  reserva: FormGroup;
+  formReserva: FormGroup;
   dni: FormControl = new FormControl('')
-  hora: FormControl = new FormControl('')
   idpedido: FormControl = new FormControl('')
+  matricula: FormControl = new FormControl('')
+  hora: FormControl = new FormControl('')
 
-  constructor(private muelleSer: MuelleService, private activatedRoute: ActivatedRoute) {
+
+  constructor(private muelleSer: MuelleService, private activatedRoute: ActivatedRoute, private reservaServ: ReservasService) {
     this.muelleId = this.activatedRoute.snapshot.paramMap.get("muelleId")!;
     this.muelleSer.muelle(this.muelleId)
       .subscribe(resp => {
@@ -35,9 +41,10 @@ export class DetalleMuelleComponent implements OnInit {
         Swal.fire("Muelle", err.error.message, "error");
       })
 
-    this.reserva = new FormGroup({
+    this.formReserva = new FormGroup({
       dni: this.dni,
       idpedido: this.idpedido,
+      matricula: this.matricula,
       hora: this.hora,
     });
   }
@@ -46,9 +53,31 @@ export class DetalleMuelleComponent implements OnInit {
   }
 
   reservar() {
-    console.log(this.reserva.get("dni")?.value);
-    console.log(this.reserva.get("idpedido")?.value);
-    console.log(this.reserva.get("hora")?.value);
+    const dni = this.formReserva.get("dni")?.value;
+    const idpedido = this.formReserva.get("idpedido")?.value;
+    const matricula = this.formReserva.get("matricula")?.value;
+    const hora = this.formReserva.get("hora")?.value;
+    console.log(dni);
+    console.log(idpedido);
+    console.log(hora);
+
+    //from form
+    this.reserva.dni = dni;
+    this.reserva.matricula = matricula;
+    this.reserva.idPedido = idpedido;
+    this.reserva.tramoHora = hora;
+
+    //from muelle
+    this.reserva.idMuelle = this.muelle.id;
+    this.reserva.actividad = this.muelle.tipoMuelle;
+    this.reserva.tipoCamion = this.muelle.tipoCamion;
+    // this.reserva.fechaHoraReserva = new Date(); FALTA
+
+    this.reservaServ.reservar(this.reserva)
+      .subscribe(resp => {
+        console.log(resp.body);
+      })
+
   }
 
 }

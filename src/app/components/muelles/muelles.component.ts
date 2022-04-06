@@ -41,6 +41,10 @@ export class MuellesComponent implements OnInit {
     this.router.navigate(["home/muelle/" + muelleId]);
   }
 
+  calcularHoraMuelle(muelle: Muelle) {
+    return muelle.aperturaMuelle * 1 + muelle.numeroTramosReserva * 1;
+  }
+
 
 
 }

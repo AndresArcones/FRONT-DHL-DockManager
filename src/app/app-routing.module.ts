@@ -7,6 +7,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { MuellesComponent } from './components/muelles/muelles.component';
 import { DetalleMuelleComponent } from './components/detalle-muelle/detalle-muelle.component';
+import { ReservasComponent } from './components/reservas/reservas.component';
 
 const routes: Routes = [
   { path: '', component: LogInComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
     children: [
       { path: '', component: MuellesComponent, },
       { path: 'muelle/:muelleId', component: DetalleMuelleComponent, },
-      // { path: 'uploadVideo', component: SubirVideoComponent, },
+      { path: 'reservas', component: ReservasComponent, },
     ]
   },
 

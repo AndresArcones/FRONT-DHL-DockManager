@@ -1,5 +1,5 @@
 <div fxLayout="row" fxLayoutAlign="center center">
-  <form [formGroup]="reserva">
+  <form [formGroup]="formReserva">
     <mat-form-field appearance="fill">
       <mat-label>DNI</mat-label>
       <input matInput required [formControl]="dni">
@@ -9,10 +9,17 @@
       <input matInput required [formControl]="idpedido">
     </mat-form-field>
     <mat-form-field appearance="fill">
+      <mat-label>Matricula</mat-label>
+      <input matInput required [formControl]="matricula">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
       <mat-label>Hora</mat-label>
       <mat-select [formControl]="hora" required>
-        <mat-option *ngFor="let reserva of muelle.reservas; let i = index" value="{{i}}">{{i+1}}
-        </mat-option>
+        <div *ngFor="let reserva of muelle.reservas; let i=index">
+          <mat-option *ngIf="reserva == null" value="{{i}}">
+            {{i+1}}
+          </mat-option>
+        </div>
       </mat-select>
     </mat-form-field>
 
