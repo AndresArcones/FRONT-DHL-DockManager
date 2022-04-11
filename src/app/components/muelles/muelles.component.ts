@@ -46,5 +46,17 @@ export class MuellesComponent implements OnInit {
   }
 
 
+  estaLleno(muelle: Muelle) {
+    let isLleno: boolean = true;
+    muelle.reservas.forEach(reserva => {
+      if (reserva == null) {
+        isLleno = false;
+      }
+    });
+
+    return isLleno;
+
+  }
+
 
 }

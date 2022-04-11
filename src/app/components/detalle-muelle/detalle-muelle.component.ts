@@ -77,7 +77,6 @@ export class DetalleMuelleComponent implements OnInit {
       .subscribe(resp => {
         console.log(resp.body);
       })
-
   }
 
 }

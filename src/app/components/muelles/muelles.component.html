@@ -3,15 +3,16 @@
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 g-3">
       <div *ngFor="let muelle of muelles" style="cursor:pointer;" class="col animate__animated animate__fadeIn">
-        <div class="card shadow-sm">
+        <div *ngIf="!estaLleno(muelle) || auth.hasRole('ROL_ADMIN')" class="card shadow-sm">
           <h1 style=" margin: auto; text-align: center; color: white;">Muelle: {{muelle.nombre}}
           </h1>
-          <img (click)="openMuelle(muelle.id)" *ngIf="muelle.estado === 'disponible'" src=".\assets\muelle.jpg"
-            alt="">
-          <img *ngIf="muelle.estado === 'no disponible'" src=".\assets\muelleRojo.jpg" alt="">
+          <img (click)="openMuelle(muelle.id)" *ngIf="muelle.estado === 'disponible' && !estaLleno(muelle)"
+            src=".\assets\muelle.jpg" alt="">
+          <img *ngIf="muelle.estado === 'no disponible' || estaLleno(muelle) " src=".\assets\muelleRojo.jpg" alt="">
 
-          
+
           <div class="card-body">
+
             <h3 (click)="openMuelle(muelle.id)" class="card-text">
               {{ (muelle.tipoMuelle | titlecase) + " | " + (muelle.tipoCamion | titlecase) }}
             </h3>
@@ -19,7 +20,7 @@
               {{ "Apertura-Cierre: " + muelle.aperturaMuelle+ "-" + calcularHoraMuelle(muelle)}}
             </h3>
             <div class="d-flex justify-content-between align-items-center">
-              <small class="text-muted">{{muelle.estado}}</small>
+              <small class="text-muted"> </small>
               <div class="btn-group">
                 <button (click)="openMuelle(muelle.id)" type="button"
                   class="btn btn-sm btn-outline-secondary">Reservar</button>
