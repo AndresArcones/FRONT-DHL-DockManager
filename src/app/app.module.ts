@@ -32,7 +32,8 @@ import { MuellesComponent } from './components/muelles/muelles.component';
 import { DetalleMuelleComponent } from './components/detalle-muelle/detalle-muelle.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReservasComponent } from './components/reservas/reservas.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component'
 
 
 
@@ -48,6 +49,7 @@ import { MatTableModule } from '@angular/material/table'
     MuellesComponent,
     DetalleMuelleComponent,
     ReservasComponent,
+    ReservastransportistasComponent,
 
   ],
   imports: [
