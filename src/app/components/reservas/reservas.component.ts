@@ -13,6 +13,10 @@ export class ReservasComponent implements OnInit {
   displayedColumns: string[] = ['id', 'nombreMuelle', 'dni', 'matricula', 'idPedido', 'actividad', 'fechaHoraReserva', 'tipoCamion'];
   dataSource: ReservaDto[] = [];
   reservasPlataforma: ReservaDto[] = []
+  porcentajeCanceladas:number=0;
+  porcentajeLlegada:number=0;
+  porcentajeDisponibilidad: number=0;
+
 
 
 

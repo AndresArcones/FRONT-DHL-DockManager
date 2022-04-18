@@ -31,7 +31,7 @@ export class ReservasService {
     return this.http.get<ReservaDto[]>(this._urlEndpointMostrarReservas, { observe: "response" });
   }
 
-  //ADMIN ONLY
+  //User ONLY
   mostrarReservasSiguientes(): Observable<HttpResponse<ReservaDto[]>> {
 
     return this.http.get<ReservaDto[]>(this._urlEndpointMostrarReservasSiguientes, { observe: "response" });
