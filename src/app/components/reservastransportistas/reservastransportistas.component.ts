@@ -10,14 +10,14 @@ import { ReservasService } from 'src/app/services/reservas.service';
 export class ReservastransportistasComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['id', 'nombreMuelle', 'dni', 'matricula', 'idPedido', 'actividad', 'fechaHoraReserva', 'tipoCamion'];
+  displayedColumns: string[] = ['nombreMuelle', 'matricula',  'fechaHoraReserva'];
   dataSource: ReservaDto[] = [];
   reservasPlataforma: ReservaDto[] = []
 
   constructor(private reservasServ: ReservasService) { }
 
   async ngOnInit() {
-    this.reservasServ.mostrarReservas()
+    this.reservasServ.mostrarReservasSiguientes()
       .subscribe(resp => {
         if (resp.status === 200) {
           this.reservasPlataforma = resp.body!.map(reserva => Object.assign(new ReservaDto(), reserva));

@@ -11,6 +11,7 @@ export class ReservasService {
 
   private _urlEndpointReservas: string = "http://localhost:8080/api/reserva"
   private _urlEndpointMostrarReservas: string = "http://localhost:8080/api/reservas"
+  private _urlEndpointMostrarReservasSiguientes: string = "http://localhost:8080/api/reserva/pantalla"
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -28,6 +29,12 @@ export class ReservasService {
   mostrarReservas(): Observable<HttpResponse<ReservaDto[]>> {
 
     return this.http.get<ReservaDto[]>(this._urlEndpointMostrarReservas, { observe: "response" });
+  }
+
+  //ADMIN ONLY
+  mostrarReservasSiguientes(): Observable<HttpResponse<ReservaDto[]>> {
+
+    return this.http.get<ReservaDto[]>(this._urlEndpointMostrarReservasSiguientes, { observe: "response" });
   }
 
 
