@@ -34,7 +34,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReservasComponent } from './components/reservas/reservas.component';
 import { MatTableModule } from '@angular/material/table';
 import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component';
-import { PedidosComponent } from './components/pedidos/pedidos.component'
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { MisreservasComponent } from './components/misreservas/misreservas.component'
 
 
 
@@ -52,6 +53,7 @@ import { PedidosComponent } from './components/pedidos/pedidos.component'
     ReservasComponent,
     ReservastransportistasComponent,
     PedidosComponent,
+    MisreservasComponent,
 
   ],
   imports: [
