@@ -8,7 +8,7 @@ import { Pedido } from 'src/app/interfaces/pedido';
 })
 export class PedidosComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'horaEntrada', 'horaSalida', 'estado', 'matricula', 'tipo'];
+  displayedColumns: string[] = ['id', 'horaEntrada', 'horaSalida', 'estado', 'matricula','retraso','tiempoTardado'];
   dataSource: Pedido[] = [];
 
   constructor() { }

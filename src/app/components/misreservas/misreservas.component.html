@@ -45,7 +45,10 @@
      <!-- Acciones Column -->
      <ng-container matColumnDef="acciones">
         <mat-header-cell mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
-        <mat-cell mat-cell *matCellDef="let reserva"><button mat-button style="color: white; background-color: red;"><mat-icon style="color: white;">not_interested</mat-icon>Cancelar</button></mat-cell>
+        <mat-cell mat-cell *matCellDef="let reserva">
+          <button mat-button *ngIf="reserva.anulada==false"(click)="anularReserva(reserva.id)" style="color: white; background-color: red;"><mat-icon style="color: white;">not_interested</mat-icon> Anular</button>
+          <button mat-button *ngIf="reserva.anulada==true" style="color: white; background-color: green;"><mat-icon style="color: white;">done</mat-icon> Anulada</button>
+        </mat-cell>
       </ng-container>
   
     <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

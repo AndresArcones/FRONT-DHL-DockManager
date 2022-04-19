@@ -32,10 +32,16 @@
     </ng-container>
   
     <!-- tipo Column -->
-    <ng-container matColumnDef="tipo">
-      <mat-header-cell mat-header-cell *matHeaderCellDef> tipo </mat-header-cell>
-      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.tipo}} </mat-cell>
+    <ng-container matColumnDef="retraso">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> retraso </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.retraso}} </mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="tiempoTardado">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> tiempoTardado </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.tiempoTardado}} </mat-cell>
+    </ng-container>
+  
   
     <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

@@ -5,7 +5,8 @@ export class Pedido{
   horaSalida: Date| undefined;
   estado:string;
   matricula:string;
-  tipo: string;
+  retraso:number;
+  tiempoTardado:number;
 
   constructor(){
     this.id=""
@@ -13,7 +14,8 @@ export class Pedido{
     this.horaSalida= undefined
     this.estado=""
     this.matricula=""
-    this.tipo=""
+    this.retraso=0
+    this.tiempoTardado=-1
     }
 
 }

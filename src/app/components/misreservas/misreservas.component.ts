@@ -16,7 +16,30 @@ export class MisreservasComponent implements OnInit {
 
   constructor(private reservasServ: ReservasService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.mostrarMisReservas();
+  }
+
+  mostrarMisReservas(){
+    this.reservasServ.mostrarMisReservas()
+      .subscribe(resp => {
+        if (resp.status === 200) {
+          this.reservasPlataforma = resp.body!.map(reserva => Object.assign(new ReservaDto(), reserva));
+          this.dataSource = this.reservasPlataforma;
+          console.log(this.dataSource);
+        }
+      });
+
+    this.dataSource = this.reservasPlataforma;
+  }
+
+  anularReserva(id:string){
+
+    this.reservasServ.anularReservas(id).subscribe(
+      (result:any) =>{
+        this.mostrarMisReservas();
+      });
+
   }
 
 }

@@ -12,6 +12,8 @@ export class ReservasService {
   private _urlEndpointReservas: string = "http://localhost:8080/api/reserva"
   private _urlEndpointMostrarReservas: string = "http://localhost:8080/api/reservas"
   private _urlEndpointMostrarReservasSiguientes: string = "http://localhost:8080/api/reserva/pantalla"
+  private _urlEndpointMostrarMisReservas: string = "http://localhost:8080/api/mis_reservas"
+  private _urlEndpointAnularReservas: string = "http://localhost:8080/api/reserva/anular"
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -37,6 +39,15 @@ export class ReservasService {
     return this.http.get<ReservaDto[]>(this._urlEndpointMostrarReservasSiguientes, { observe: "response" });
   }
 
+  mostrarMisReservas(): Observable<HttpResponse<ReservaDto[]>> {
 
+    return this.http.get<ReservaDto[]>(this._urlEndpointMostrarMisReservas, { observe: "response" });
+  }
+
+  anularReservas(id:string): Observable<HttpResponse<any>> {
+
+    return this.http.post<any>(this._urlEndpointAnularReservas+"/"+id, { observe: "response" });
+  }
+  
 
 }
