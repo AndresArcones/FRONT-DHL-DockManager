@@ -9,6 +9,7 @@ import { MuellesComponent } from './components/muelles/muelles.component';
 import { DetalleMuelleComponent } from './components/detalle-muelle/detalle-muelle.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
 import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'muelle/:muelleId', component: DetalleMuelleComponent, },
       { path: 'reservas', component: ReservasComponent, },
       { path: 'reservastransportistas', component: ReservastransportistasComponent, },
+      { path: 'pedidos', component: PedidosComponent, },
     ]
   },
 

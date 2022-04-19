@@ -33,7 +33,8 @@ import { DetalleMuelleComponent } from './components/detalle-muelle/detalle-muel
 import { MatSelectModule } from '@angular/material/select';
 import { ReservasComponent } from './components/reservas/reservas.component';
 import { MatTableModule } from '@angular/material/table';
-import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component'
+import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component'
 
 
 
@@ -50,6 +51,7 @@ import { ReservastransportistasComponent } from './components/reservastransporti
     DetalleMuelleComponent,
     ReservasComponent,
     ReservastransportistasComponent,
+    PedidosComponent,
 
   ],
   imports: [

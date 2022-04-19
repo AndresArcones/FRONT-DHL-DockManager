@@ -48,6 +48,11 @@
       <span>Ver Reservas</span>
     </button>
 
+    <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" routerLink="/home/pedidos">
+      <mat-icon>assignment</mat-icon>
+      <span>Ver Pedidos</span>
+    </button>
+
     <!-- RESERVAS TRANSPORTISTAS
     <button *ngIf="this.auth.hasRole('ROL_USER')" mat-button class="menu-button" routerLink="/home/reservastransportistas">
       <mat-icon>calendar_today</mat-icon>
