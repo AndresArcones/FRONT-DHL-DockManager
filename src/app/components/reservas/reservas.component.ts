@@ -17,12 +17,9 @@ export class ReservasComponent implements OnInit {
   reservasPlataforma: ReservaDto[] = []
   KPI:KPI;
 
-
-
-
   constructor(private reservasServ: ReservasService,private muelleServ:MuelleService) {
 
-    this.KPI={porReservasCanceladasMes:0,porRetrasosLllegada:0,porUtilizacionMuelle:[]}
+    this.KPI={porReservasCanceladasMes:0.0,porRetrasosLllegada:0.0,porUtilizacionMuelle:[]}
   }
 
   async ngOnInit() {
@@ -41,10 +38,15 @@ export class ReservasComponent implements OnInit {
   }
 
   mostrarKPI(){
-    this.muelleServ.mostrarKPI().subscribe(resp => { this.KPI={porReservasCanceladasMes:(resp as any).porReservasCanceladasMes,
-      porRetrasosLllegada:(resp as any).porRetrasosLllegada,
-      porUtilizacionMuelle:(resp as any).porUtilizacionMuelle}
-     
+    this.muelleServ.mostrarKPI().subscribe((resp) => { 
+      if (resp.status === 200) {
+        this.KPI={porReservasCanceladasMes:(resp.body as any).porReservasCanceladasMes,
+          porRetrasosLllegada:(resp.body as any).porRetrasosLllegada,
+          porUtilizacionMuelle:(resp.body as any).porUtilizacionMuelle}
+        
+      }
+      console.log(resp.body);
+      console.log(this.KPI)
     });
   }
 
