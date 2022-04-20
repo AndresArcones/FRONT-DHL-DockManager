@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { RetieveUsuarioDto } from '../interfaces/retrieve-usuario-dto';
 import { Muelle } from '../interfaces/muelle';
 import { KPI } from '../interfaces/kpi';
+import { Pedido } from '../interfaces/pedido';
+import { MuelleStats } from '../interfaces/muellestats';
 
 
 @Injectable({
@@ -16,6 +18,8 @@ export class MuelleService {
   private _urlEndpointMuelles: string = "http://localhost:8080/api/muelles"
   private _urlEndpointMuelle: string = "http://localhost:8080/api/muelle"
   private _urlEndpointKPI: string = "http://localhost:8080/api/kpi"
+  private _urlEndpointKPIMuelles: string = "http://localhost:8080/api/kpi_muelles"
+  private _urlEndpointPedidosHastaAhora: string = "http://localhost:8080/api/pedidos_hasta_ahora"
 
 
 
@@ -34,6 +38,17 @@ export class MuelleService {
   mostrarKPI(): Observable<HttpResponse<KPI[]>> {
 
     return this.http.get<KPI[]>(this._urlEndpointKPI, { observe: "response" });
+  }
+
+  mostrarKPIMuelles(): Observable<HttpResponse<MuelleStats[]>> {
+
+    return this.http.get<MuelleStats[]>(this._urlEndpointKPIMuelles, { observe: "response" });
+  }
+
+
+  mostrarPedidosHastaAhora(): Observable<HttpResponse<Pedido[]>> {
+
+    return this.http.get<Pedido[]>(this._urlEndpointPedidosHastaAhora, { observe: "response" });
   }
 
 }

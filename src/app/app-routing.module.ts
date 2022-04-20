@@ -13,6 +13,7 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { MisreservasComponent } from './components/misreservas/misreservas.component';
 import { SimularhoraComponent } from './components/simularhora/simularhora.component';
 import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'pedidos', component: PedidosComponent, },
       { path: 'simularhora', component: SimularhoraComponent, },
       { path: 'cargarmuelle', component: CargarmuelleComponent, },
+      { path: 'estadisticas', component: EstadisticasComponent, },
     ]
   },
 

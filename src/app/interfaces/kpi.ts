@@ -2,12 +2,12 @@ export class KPI{
 
     porReservasCanceladasMes: number;
     porRetrasosLllegada: number;
-    porUtilizacionMuelle: Array<JSON>;
+    porUtilizacionMuelle: number;
   
     constructor(){
       this.porReservasCanceladasMes=0
       this.porRetrasosLllegada= 0
-      this.porUtilizacionMuelle= []
+      this.porUtilizacionMuelle= 0
       }
   
   }

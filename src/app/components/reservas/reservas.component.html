@@ -1,31 +1,17 @@
 
-<div fxLayout="row" fxLayoutAlign="space-around center" *ngIf="KPI">
-  <div class="">Porcentaje reservas canceladas mes
-    <div style="text-align: center;" >{{KPI.porReservasCanceladasMes}}%</div>
-  </div>
-  <div class="">Porcentaje retrasos en llegada
-    <div style="text-align: center;" >{{KPI.porRetrasosLllegada}}%</div>
-  </div>
-  <div class="">Porcentaje utilizacion de los muelles en base a disponibilidad
-    <div style="text-align: center;" >{{KPI.porReservasCanceladasMes}}%</div>
-  </div>
 
-</div>
-<hr style="padding:1vh">
-
+<h1 style="text-align: center;"><strong>Reservas Totales</strong></h1>
 <mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
-
-
   <!-- id Column -->
   <ng-container matColumnDef="id">
     <mat-header-cell mat-header-cell *matHeaderCellDef> id </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.id}} </mat-cell>
+    <mat-cell mat-cell *matCellDef="let reserva" style="margin-right: 3%;"> {{reserva.id}} </mat-cell>
   </ng-container>
 
   <!-- nombreMuelle Column -->
   <ng-container matColumnDef="nombreMuelle">
     <mat-header-cell mat-header-cell *matHeaderCellDef> nombreMuelle </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.nombreMuelle}} </mat-cell>
+    <mat-cell mat-cell *matCellDef="let reserva">{{reserva.nombreMuelle}} </mat-cell>
   </ng-container>
 
   <!-- dni Column -->

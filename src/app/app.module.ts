@@ -40,6 +40,7 @@ import { SimularhoraComponent } from './components/simularhora/simularhora.compo
 
 import {CalendarModule} from 'primeng/calendar';
 import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 
 
 
@@ -60,6 +61,7 @@ import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.co
     MisreservasComponent,
     SimularhoraComponent,
     CargarmuelleComponent,
+    EstadisticasComponent,
 
   ],
   imports: [

@@ -1,3 +1,6 @@
+
+
+<h1 style="text-align: center;"><strong>Pedidos</strong></h1>
 <mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
 
 
@@ -34,12 +37,12 @@
     <!-- tipo Column -->
     <ng-container matColumnDef="retraso">
       <mat-header-cell mat-header-cell *matHeaderCellDef> retraso </mat-header-cell>
-      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.retraso}} </mat-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.retraso}} minutos </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="tiempoTardado">
       <mat-header-cell mat-header-cell *matHeaderCellDef> tiempoTardado </mat-header-cell>
-      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.tiempoTardado}} </mat-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.tiempoTardado}} minutos</mat-cell>
     </ng-container>
   
   

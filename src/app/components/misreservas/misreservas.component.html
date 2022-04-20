@@ -1,3 +1,5 @@
+
+<h1 style="text-align: center;"><strong>Mis Reservas</strong></h1>
 <mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
   
     <!-- nombreMuelle Column -->
@@ -47,7 +49,7 @@
         <mat-header-cell mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
         <mat-cell mat-cell *matCellDef="let reserva">
           <button mat-button *ngIf="reserva.anulada==false"(click)="anularReserva(reserva.id)" style="color: white; background-color: red;"><mat-icon style="color: white;">not_interested</mat-icon> Anular</button>
-          <button mat-button *ngIf="reserva.anulada==true" style="color: white; background-color: green;"><mat-icon style="color: white;">done</mat-icon> Anulada</button>
+          <button mat-button *ngIf="reserva.anulada==true" style="color: white; background-color: grey;" disabled> Anulada</button>
         </mat-cell>
       </ng-container>
   

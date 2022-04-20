@@ -17,7 +17,7 @@
       <mat-select [formControl]="hora" required>
         <div *ngFor="let reserva of muelle.reservas; let i=index">
           <mat-option *ngIf="reserva == null" value="{{i}}">
-            {{i+1}}
+            {{tramos[i]}}
           </mat-option>
         </div>
       </mat-select>
@@ -27,7 +27,7 @@
 </div>
 
 <div fxLayout="row" fxLayoutAlign="center center">
-  <button fxLayoutAlign="center center" (click)="reservar()" type="submit" mat-raised-button color="primary">
+  <button fxLayoutAlign="center center" (click)="reservar();formReserva.reset();" type="submit" mat-raised-button color="primary">
     Reservar
   </button>
 </div>
