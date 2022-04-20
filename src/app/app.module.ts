@@ -43,6 +43,7 @@ import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.co
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { PedidosdiaComponent } from './components/pedidosdia/pedidosdia.component';
+import { BarreraComponent } from './components/barrera/barrera.component';
 
 
 
@@ -65,6 +66,7 @@ import { PedidosdiaComponent } from './components/pedidosdia/pedidosdia.componen
     CargarmuelleComponent,
     EstadisticasComponent,
     PedidosdiaComponent,
+    BarreraComponent,
 
   ],
   imports: [

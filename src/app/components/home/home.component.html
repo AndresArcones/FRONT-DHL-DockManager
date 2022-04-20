@@ -52,8 +52,8 @@
       <mat-icon>assignment</mat-icon>
       <span>Ver Pedidos</span>
       <mat-menu #pedidos="matMenu">
-        <button mat-menu-item routerLink="/home/pedidos">Ver Todos los pedidos</button>
-        <button mat-menu-item routerLink="/home/pedidosdia">Ver Pedidos del dia</button>
+        <button mat-menu-item routerLink="/home/pedidos"><mat-icon>calendar_today</mat-icon>Ver Todos los pedidos</button>
+        <button mat-menu-item routerLink="/home/pedidosdia"><mat-icon>today</mat-icon>Ver Pedidos del dia</button>
       </mat-menu>
     </button>
 
@@ -83,6 +83,11 @@
     <button mat-button class="menu-button" routerLink="/home/simularhora">
       <mat-icon>alarm</mat-icon>
       <span>Simular Hora</span>
+    </button>
+
+    <button mat-button class="menu-button" routerLink="/home/barrera">
+      <mat-icon>time_to_leave</mat-icon>
+      <span>Probar Acceso</span>
     </button>
 
     <button mat-button *ngIf="this.auth.hasRole('ROL_ADMIN')" class="menu-button" routerLink="/home/cargarmuelle">

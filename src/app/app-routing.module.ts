@@ -15,6 +15,7 @@ import { SimularhoraComponent } from './components/simularhora/simularhora.compo
 import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { PedidosdiaComponent } from './components/pedidosdia/pedidosdia.component';
+import { BarreraComponent } from './components/barrera/barrera.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
       { path: 'reservastransportistas', component: ReservastransportistasComponent, },
       { path: 'pedidos', component: PedidosComponent, },
       { path: 'pedidosdia', component: PedidosdiaComponent, },
+      { path: 'barrera', component: BarreraComponent, },
       { path: 'simularhora', component: SimularhoraComponent, },
       { path: 'cargarmuelle', component: CargarmuelleComponent, },
       { path: 'estadisticas', component: EstadisticasComponent, },

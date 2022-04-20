@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <form [formGroup]="formBarrera">
+      <mat-form-field appearance="fill">
+        <mat-label>Matricula</mat-label>
+        <input matInput required [formControl]="matricula">
+      </mat-form-field>
+    </form>
+  </div>
+  
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button fxLayoutAlign="center center" (click)="formBarrera.reset();" type="submit" mat-raised-button color="primary">
+      Activar Barrera
+    </button>
+  </div>
