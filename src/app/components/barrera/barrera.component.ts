@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Muelle } from 'src/app/interfaces/muelle';
+import { ReservasService } from 'src/app/services/reservas.service';
 import Swal from 'sweetalert2';
 import { MuelleService } from '../../services/muelles.service';
 
@@ -15,7 +16,7 @@ export class BarreraComponent implements OnInit {
   formBarrera: FormGroup;
   matricula: FormControl = new FormControl('')
 
-  constructor(private muelleSer: MuelleService, private activatedRoute: ActivatedRoute) { 
+  constructor(private reservaServ: ReservasService, private activatedRoute: ActivatedRoute) { 
     this.formBarrera = new FormGroup({
       matricula: this.matricula,
 
@@ -23,6 +24,19 @@ export class BarreraComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  enviarMatricula() {
+    const matricula = this.formBarrera.get("matricula")?.value;
+
+    //from form
+    this.matricula = matricula;
+
+    this.reservaServ.enviarMatricula(this.matricula)
+      .subscribe(resp => {
+        
+        console.log(resp.body);
+      })
   }
 
 }
