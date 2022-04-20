@@ -41,6 +41,8 @@ import { SimularhoraComponent } from './components/simularhora/simularhora.compo
 import {CalendarModule} from 'primeng/calendar';
 import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { PedidosdiaComponent } from './components/pedidosdia/pedidosdia.component';
 
 
 
@@ -62,6 +64,7 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
     SimularhoraComponent,
     CargarmuelleComponent,
     EstadisticasComponent,
+    PedidosdiaComponent,
 
   ],
   imports: [
@@ -88,7 +91,8 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
     MatDividerModule,
     MatSelectModule,
     MatTableModule,
-    CalendarModule
+    CalendarModule,
+    MatMenuModule
 
   ],
   providers: [

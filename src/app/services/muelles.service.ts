@@ -20,6 +20,7 @@ export class MuelleService {
   private _urlEndpointKPI: string = "http://localhost:8080/api/kpi"
   private _urlEndpointKPIMuelles: string = "http://localhost:8080/api/kpi_muelles"
   private _urlEndpointPedidosHastaAhora: string = "http://localhost:8080/api/pedidos_hasta_ahora"
+  private _urlEndpointPedidosDia: string = "http://localhost:8080/api/pedidos_dia"
 
 
 
@@ -49,6 +50,11 @@ export class MuelleService {
   mostrarPedidosHastaAhora(): Observable<HttpResponse<Pedido[]>> {
 
     return this.http.get<Pedido[]>(this._urlEndpointPedidosHastaAhora, { observe: "response" });
+  }
+
+  mostrarPedidosDia(): Observable<HttpResponse<Pedido[]>> {
+
+    return this.http.get<Pedido[]>(this._urlEndpointPedidosDia, { observe: "response" });
   }
 
 }

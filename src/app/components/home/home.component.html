@@ -48,9 +48,13 @@
       <span>Ver Reservas</span>
     </button>
 
-    <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" routerLink="/home/pedidos">
+    <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" [matMenuTriggerFor]="pedidos">
       <mat-icon>assignment</mat-icon>
       <span>Ver Pedidos</span>
+      <mat-menu #pedidos="matMenu">
+        <button mat-menu-item routerLink="/home/pedidos">Ver Todos los pedidos</button>
+        <button mat-menu-item routerLink="/home/pedidosdia">Ver Pedidos del dia</button>
+      </mat-menu>
     </button>
 
     <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" routerLink="/home/estadisticas">

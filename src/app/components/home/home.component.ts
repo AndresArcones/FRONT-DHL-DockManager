@@ -7,6 +7,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AutenticacionService } from '../../services/autenticacion.service';
 import { RetieveUsuarioDto } from 'src/app/interfaces/retrieve-usuario-dto';
 
+
 @UntilDestroy()
 @Component({
   selector: 'app-home',
