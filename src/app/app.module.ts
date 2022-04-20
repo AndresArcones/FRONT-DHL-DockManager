@@ -35,7 +35,11 @@ import { ReservasComponent } from './components/reservas/reservas.component';
 import { MatTableModule } from '@angular/material/table';
 import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
-import { MisreservasComponent } from './components/misreservas/misreservas.component'
+import { MisreservasComponent } from './components/misreservas/misreservas.component';
+import { SimularhoraComponent } from './components/simularhora/simularhora.component'
+
+import {CalendarModule} from 'primeng/calendar';
+import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
 
 
 
@@ -54,6 +58,8 @@ import { MisreservasComponent } from './components/misreservas/misreservas.compo
     ReservastransportistasComponent,
     PedidosComponent,
     MisreservasComponent,
+    SimularhoraComponent,
+    CargarmuelleComponent,
 
   ],
   imports: [
@@ -79,7 +85,8 @@ import { MisreservasComponent } from './components/misreservas/misreservas.compo
     MatIconModule,
     MatDividerModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    CalendarModule
 
   ],
   providers: [

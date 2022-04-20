@@ -11,6 +11,8 @@ import { ReservasComponent } from './components/reservas/reservas.component';
 import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { MisreservasComponent } from './components/misreservas/misreservas.component';
+import { SimularhoraComponent } from './components/simularhora/simularhora.component';
+import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,8 @@ const routes: Routes = [
       { path: 'misReservas', component: MisreservasComponent, },
       { path: 'reservastransportistas', component: ReservastransportistasComponent, },
       { path: 'pedidos', component: PedidosComponent, },
+      { path: 'simularhora', component: SimularhoraComponent, },
+      { path: 'cargarmuelle', component: CargarmuelleComponent, },
     ]
   },
 
