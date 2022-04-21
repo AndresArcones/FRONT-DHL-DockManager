@@ -65,7 +65,7 @@ export class SimularhoraComponent implements OnInit {
   llamar(){
     var miliseconds = this.date1.getTime();
     this.comprobacion=true;
-    this.reservaServ.enviarSimulacion(miliseconds)
+    this.reservaServ.enviarSimulacion()
     .subscribe(resp => {
       if (resp.status === 200) {
         miliseconds = resp.body!;
@@ -82,7 +82,7 @@ export class SimularhoraComponent implements OnInit {
   llamarboton(){
     var miliseconds = 0;
     this.comprobacion=true;
-    this.reservaServ.enviarSimulacion(miliseconds)
+    this.reservaServ.enviarSimulacion()
     .subscribe(resp => {
       if (resp.status === 200) {
         miliseconds = resp.body!;
