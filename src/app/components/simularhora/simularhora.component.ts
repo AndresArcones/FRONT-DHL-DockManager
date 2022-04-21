@@ -65,7 +65,23 @@ export class SimularhoraComponent implements OnInit {
   llamar(){
     var miliseconds = this.date1.getTime();
     this.comprobacion=true;
+    this.reservaServ.enviarSimulacion(miliseconds)
+    .subscribe(resp => {
+      if (resp.status === 200) {
+        miliseconds = resp.body!;
+        this.comprobacion=true;
+        console.log(miliseconds);
+        Swal.fire("Hora cambiada", "Hora cambiada correctamente", "success")
+      }
+    }, err => {
+      this.comprobacion=false
+      Swal.fire("Hora", err.error.message, "error");
+    })
+  }
 
+  llamarboton(){
+    var miliseconds = 0;
+    this.comprobacion=true;
     this.reservaServ.enviarSimulacion(miliseconds)
     .subscribe(resp => {
       if (resp.status === 200) {

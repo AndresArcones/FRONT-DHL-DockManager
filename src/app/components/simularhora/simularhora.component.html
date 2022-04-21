@@ -3,5 +3,10 @@
 <div class="p-field p-col-12 p-md-4" style="text-align: center;">
     <p-calendar [(ngModel)]="date1" [showTime]="true" inputId="time" (onSelect)="llamar()"></p-calendar>
 </div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <button fxLayoutAlign="center center" (click)="llamarboton()" type="submit" mat-raised-button color="primary">
+    Hora y Fecha actual
+  </button>
+</div>
 <span class="center" *ngIf="comprobacion">Se ha realizado la simulacion</span>
 
