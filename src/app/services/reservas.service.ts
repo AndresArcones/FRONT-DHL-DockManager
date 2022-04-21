@@ -16,6 +16,7 @@ export class ReservasService {
   private _urlEndpointMostrarMisReservas: string = "http://localhost:8080/api/mis_reservas"
   private _urlEndpointAnularReservas: string = "http://localhost:8080/api/reserva/anular"
   private _urlEndpointEnviarMatricula: string = "http://localhost:8080/api/barrera"
+  private _urlEndpointEnviarSimulacion: string = "http://localhost:8080/api/hora"
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -56,6 +57,12 @@ export class ReservasService {
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>(this._urlEndpointEnviarMatricula, { headers: httpHeaders, observe: "response" });
   }
-  
+
+  enviarSimulacion(milliseconds:number): Observable<any> {
+
+    const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(this._urlEndpointEnviarSimulacion, { headers: httpHeaders, observe: "response" });
+  }
+
 
 }
