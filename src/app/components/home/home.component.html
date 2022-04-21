@@ -74,12 +74,6 @@
 
     <mat-divider></mat-divider>
 
-    <button (click)="this.auth.logOut()" mat-button class="menu-button" routerLink="/help">
-      <mat-icon>exit_to_app</mat-icon>
-      <span>LogOut</span>
-    </button>
-    <mat-divider></mat-divider>
-
     <button mat-button class="menu-button" routerLink="/home/simularhora">
       <mat-icon>alarm</mat-icon>
       <span>Simular Hora</span>
@@ -93,6 +87,11 @@
     <button mat-button *ngIf="this.auth.hasRole('ROL_ADMIN')" class="menu-button" routerLink="/home/cargarmuelle">
       <mat-icon>autorenew</mat-icon>
       <span>Cargar Muelle</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button (click)="this.auth.logOut()" mat-button class="menu-button" routerLink="/help">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>LogOut</span>
     </button>
   </mat-sidenav>
   <mat-sidenav-content>
