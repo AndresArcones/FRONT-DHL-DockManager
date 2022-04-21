@@ -57,11 +57,6 @@
       </mat-menu>
     </button>
 
-    <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" routerLink="/home/estadisticas">
-      <mat-icon>signal_cellular_alt</mat-icon>
-      <span>Estadisticas</span>
-    </button>
-
  
 
     <!-- RESERVAS TRANSPORTISTAS-->
@@ -77,6 +72,11 @@
     <button mat-button class="menu-button" routerLink="/home/simularhora">
       <mat-icon>alarm</mat-icon>
       <span>Simular Hora</span>
+    </button>
+
+    <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" routerLink="/home/estadisticas">
+      <mat-icon>signal_cellular_alt</mat-icon>
+      <span>Estadisticas</span>
     </button>
 
     <button mat-button class="menu-button" routerLink="/home/barrera">
