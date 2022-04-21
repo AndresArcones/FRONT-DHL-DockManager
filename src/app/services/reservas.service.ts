@@ -52,13 +52,13 @@ export class ReservasService {
     return this.http.post<any>(this._urlEndpointAnularReservas+"/"+id, { observe: "response" });
   }
 
-  enviarMatricula(matricula:FormControl): Observable<any> {
+  enviarMatricula(): Observable<any> {
 
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>(this._urlEndpointEnviarMatricula, { headers: httpHeaders, observe: "response" });
   }
 
-  enviarSimulacion(milliseconds:number): Observable<any> {
+  enviarSimulacion(): Observable<any> {
 
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>(this._urlEndpointEnviarSimulacion, { headers: httpHeaders, observe: "response" });
