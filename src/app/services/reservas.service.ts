@@ -4,6 +4,8 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ReservaDto } from '../interfaces/reserva-dto';
+import { HoraDto } from '../interfaces/hora-dto';
+import { Matricula } from '../interfaces/form-barrera';
 
 @Injectable({
   providedIn: 'root'
@@ -47,21 +49,21 @@ export class ReservasService {
     return this.http.get<ReservaDto[]>(this._urlEndpointMostrarMisReservas, { observe: "response" });
   }
 
-  anularReservas(id:string): Observable<HttpResponse<any>> {
+  anularReservas(id: string): Observable<HttpResponse<any>> {
 
-    return this.http.post<any>(this._urlEndpointAnularReservas+"/"+id, { observe: "response" });
+    return this.http.post<any>(this._urlEndpointAnularReservas + "/" + id, { observe: "response" });
   }
 
-  enviarMatricula(): Observable<any> {
+  enviarMatricula(matricula: Matricula): Observable<any> {
 
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<any>(this._urlEndpointEnviarMatricula, { headers: httpHeaders, observe: "response" });
+    return this.http.post<any>(this._urlEndpointEnviarMatricula, JSON.stringify(matricula), { headers: httpHeaders, observe: "response" });
   }
 
-  enviarSimulacion(): Observable<any> {
+  enviarSimulacion(hora: HoraDto): Observable<any> {
 
     const httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<any>(this._urlEndpointEnviarSimulacion, { headers: httpHeaders, observe: "response" });
+    return this.http.post<any>(this._urlEndpointEnviarSimulacion, JSON.stringify(hora), { headers: httpHeaders, observe: "response" });
   }
 
 

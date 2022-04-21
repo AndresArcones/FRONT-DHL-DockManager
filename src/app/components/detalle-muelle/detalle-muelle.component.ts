@@ -19,7 +19,7 @@ export class DetalleMuelleComponent implements OnInit {
 
   horarios: number = 0;
 
-  tramos:Array<string>=['6:00-7:00','7:00-8:00','8:00-9:00','10:00-11:00','11:00-12:00','12:00-13:00','13:00-14:00','14:00-15:00']
+  tramos: Array<string> = ['6:00-7:00', '7:00-8:00', '8:00-9:00', '10:00-11:00', '11:00-12:00', '12:00-13:00', '13:00-14:00', '14:00-15:00']
 
   muelle: Muelle = new Muelle();
   reserva: ReservaDto = new ReservaDto();
@@ -77,10 +77,10 @@ export class DetalleMuelleComponent implements OnInit {
 
     this.reservaServ.reservar(this.reserva)
       .subscribe(resp => {
-        
+
         console.log(resp.body);
       })
-      location.reload()
+    // location.reload()
   }
 
 }

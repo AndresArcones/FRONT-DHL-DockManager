@@ -5,6 +5,7 @@ import { Muelle } from 'src/app/interfaces/muelle';
 import { ReservasService } from 'src/app/services/reservas.service';
 import Swal from 'sweetalert2';
 import { MuelleService } from '../../services/muelles.service';
+import { Matricula } from '../../interfaces/form-barrera';
 
 @Component({
   selector: 'app-barrera',
@@ -15,7 +16,7 @@ export class BarreraComponent implements OnInit {
 
   formBarrera: FormGroup;
   matricula: FormControl = new FormControl('')
-  comprobacion:boolean=false;
+  comprobacion: boolean = false;
 
   constructor(private reservaServ: ReservasService, private activatedRoute: ActivatedRoute) {
     this.formBarrera = new FormGroup({
@@ -28,23 +29,23 @@ export class BarreraComponent implements OnInit {
   }
 
   enviarMatricula() {
-    const matricula = this.formBarrera.get("matricula")?.value;
 
-    //from form
-    this.matricula = matricula;
+    const mat: Matricula = {
+      "matricula": this.formBarrera.get("matricula")?.value
+    }
 
-    this.reservaServ.enviarMatricula()
-    .subscribe(resp => {
-      if (resp.status === 200) {
-        this.matricula = resp.body!;
-        this.comprobacion=true;
-        console.log(this.matricula);
-        Swal.fire("Matricula introducida", "Matricula introducida correctamente ", "success")
-      }
-    }, err => {
-      this.comprobacion=false
-      Swal.fire("Matricula", err.error.message, "error");
-    })
+    this.reservaServ.enviarMatricula(mat)
+      .subscribe(resp => {
+        if (resp.status === 200) {
+          this.matricula = resp.body!;
+          this.comprobacion = true;
+          console.log(this.matricula);
+          Swal.fire("Matricula introducida", "Matricula introducida correctamente ", "success")
+        }
+      }, err => {
+        this.comprobacion = false
+        Swal.fire("Matricula", err.error.message, "error");
+      })
   }
 
 }
