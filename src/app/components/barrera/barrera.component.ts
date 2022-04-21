@@ -15,6 +15,7 @@ export class BarreraComponent implements OnInit {
 
   formBarrera: FormGroup;
   matricula: FormControl = new FormControl('')
+  comprobacion:boolean=false;
 
   constructor(private reservaServ: ReservasService, private activatedRoute: ActivatedRoute) { 
     this.formBarrera = new FormGroup({
@@ -33,10 +34,16 @@ export class BarreraComponent implements OnInit {
     this.matricula = matricula;
 
     this.reservaServ.enviarMatricula(this.matricula)
-      .subscribe(resp => {
-        
-        console.log(resp.body);
-      })
+    .subscribe(resp => {
+      if (resp.status === 200) {
+        this.matricula = resp.body!;
+        this.comprobacion=true;
+        console.log(this.matricula);
+      }
+    }, err => {
+      this.comprobacion=false
+      Swal.fire("Matricula", err.error.message, "error");
+    })
   }
 
 }
