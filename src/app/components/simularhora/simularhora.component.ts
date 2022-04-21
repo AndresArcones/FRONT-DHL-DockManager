@@ -1,4 +1,7 @@
+import { ReservasService } from 'src/app/services/reservas.service';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-simularhora',
@@ -9,9 +12,10 @@ export class SimularhoraComponent implements OnInit {
 
     date1: Date=new Date();
 
-    simulacion:boolean=false;
 
-    
+    comprobacion:boolean=false;
+
+
     dates: Date[] | undefined;
 
     rangeDates: Date[]| undefined;
@@ -24,7 +28,7 @@ export class SimularhoraComponent implements OnInit {
 
     invalidDates: Array<Date>| undefined
 
-  constructor() {
+  constructor(private reservaServ: ReservasService) {
     }
 
   ngOnInit(): void {
@@ -59,8 +63,20 @@ export class SimularhoraComponent implements OnInit {
   }
 
   llamar(){
-    var milliseconds = this.date1.getTime();
-    this.simulacion=true;
-    console.log(milliseconds)
+    var miliseconds = this.date1.getTime();
+    this.comprobacion=true;
+
+    this.reservaServ.enviarSimulacion(miliseconds)
+    .subscribe(resp => {
+      if (resp.status === 200) {
+        miliseconds = resp.body!;
+        this.comprobacion=true;
+        console.log(miliseconds);
+        Swal.fire("Hora cambiada", "Hora cambiada correctamente", "success")
+      }
+    }, err => {
+      this.comprobacion=false
+      Swal.fire("Hora", err.error.message, "error");
+    })
   }
 }

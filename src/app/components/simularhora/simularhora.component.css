@@ -1,0 +1,12 @@
+.center{
+  display: grid;
+  justify-content: center;
+  border-radius: 0.25rem;
+  background-color: lightgreen;
+  padding: 0.5rem;
+  color:black;
+  font-size: 1rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
+
+}
