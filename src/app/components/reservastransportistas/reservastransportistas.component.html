@@ -1,0 +1,30 @@
+<mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Nombremuelle Column -->
+  <ng-container matColumnDef="nombreMuelle">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> nombreMuelle </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.nombreMuelle}} </mat-cell>
+  </ng-container>
+
+
+  <!-- matricula Column -->
+  <ng-container matColumnDef="matricula">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> matricula </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.matricula}} </mat-cell>
+  </ng-container>
+
+
+  <!-- fechaHoraReserva Column -->
+  <ng-container matColumnDef="fechaHoraReserva">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> fechaHoraReserva </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.fechaHoraReserva}} </mat-cell>
+  </ng-container>
+
+
+
+  <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

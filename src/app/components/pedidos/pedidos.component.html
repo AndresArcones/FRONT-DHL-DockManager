@@ -1,0 +1,53 @@
+
+
+<h1 style="text-align: center;"><strong>Pedidos</strong></h1>
+<mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- horaEntrada Column -->
+    <ng-container matColumnDef="horaEntrada">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> horaEntrada </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.horaEntrada}} </mat-cell>
+    </ng-container>
+  
+    <!-- horaSalida Column -->
+    <ng-container matColumnDef="horaSalida">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> horaSalida </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.horaSalida}} </mat-cell>
+    </ng-container>
+  
+    <!-- estado Column -->
+    <ng-container matColumnDef="estado">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> estado </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.estado}} </mat-cell>
+    </ng-container>
+  
+    <!-- matricula Column -->
+    <ng-container matColumnDef="matricula">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> matricula </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.matricula}} </mat-cell>
+    </ng-container>
+  
+    <!-- tipo Column -->
+    <ng-container matColumnDef="retraso">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> retraso </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.retraso}} minutos </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="tiempoTardado">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> tiempoTardado </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.tiempoTardado}} minutos</mat-cell>
+    </ng-container>
+  
+  
+    <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  

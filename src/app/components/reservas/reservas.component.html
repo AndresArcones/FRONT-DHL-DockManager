@@ -1,50 +1,50 @@
-<mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-  <!-- Position Column -->
+
+<h1 style="text-align: center;"><strong>Reservas Totales</strong></h1>
+<mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- id Column -->
   <ng-container matColumnDef="id">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> id </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.id}} </mat-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef > id </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let reserva" style="margin-right: 3%;"> {{reserva.id}} </mat-cell>
   </ng-container>
 
-  <!-- Position Column -->
+  <!-- nombreMuelle Column -->
   <ng-container matColumnDef="nombreMuelle">
     <mat-header-cell mat-header-cell *matHeaderCellDef> nombreMuelle </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.nombreMuelle}} </mat-cell>
+    <mat-cell mat-cell *matCellDef="let reserva">{{reserva.nombreMuelle}} </mat-cell>
   </ng-container>
 
-  <!-- Name Column -->
+  <!-- dni Column -->
   <ng-container matColumnDef="dni">
     <mat-header-cell mat-header-cell *matHeaderCellDef> dni </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.dni}} </mat-cell>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- matricula Column -->
   <ng-container matColumnDef="matricula">
     <mat-header-cell mat-header-cell *matHeaderCellDef> matricula </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.matricula}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- idPedido Column -->
   <ng-container matColumnDef="idPedido">
     <mat-header-cell mat-header-cell *matHeaderCellDef> idPedido </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.idPedido}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- actividad Column -->
   <ng-container matColumnDef="actividad">
     <mat-header-cell mat-header-cell *matHeaderCellDef> actividad </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.actividad}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- fechaHoraReserva Column -->
   <ng-container matColumnDef="fechaHoraReserva">
     <mat-header-cell mat-header-cell *matHeaderCellDef> fechaHoraReserva </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.fechaHoraReserva}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- tipoCamion Column -->
   <ng-container matColumnDef="tipoCamion">
     <mat-header-cell mat-header-cell *matHeaderCellDef> tipoCamion </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.tipoCamion}} </mat-cell>

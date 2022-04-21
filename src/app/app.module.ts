@@ -32,7 +32,18 @@ import { MuellesComponent } from './components/muelles/muelles.component';
 import { DetalleMuelleComponent } from './components/detalle-muelle/detalle-muelle.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReservasComponent } from './components/reservas/reservas.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { ReservastransportistasComponent } from './components/reservastransportistas/reservastransportistas.component';
+import { PedidosComponent } from './components/pedidos/pedidos.component';
+import { MisreservasComponent } from './components/misreservas/misreservas.component';
+import { SimularhoraComponent } from './components/simularhora/simularhora.component'
+
+import {CalendarModule} from 'primeng/calendar';
+import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { PedidosdiaComponent } from './components/pedidosdia/pedidosdia.component';
+import { BarreraComponent } from './components/barrera/barrera.component';
 
 
 
@@ -48,6 +59,14 @@ import { MatTableModule } from '@angular/material/table'
     MuellesComponent,
     DetalleMuelleComponent,
     ReservasComponent,
+    ReservastransportistasComponent,
+    PedidosComponent,
+    MisreservasComponent,
+    SimularhoraComponent,
+    CargarmuelleComponent,
+    EstadisticasComponent,
+    PedidosdiaComponent,
+    BarreraComponent,
 
   ],
   imports: [
@@ -73,7 +92,9 @@ import { MatTableModule } from '@angular/material/table'
     MatIconModule,
     MatDividerModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    CalendarModule,
+    MatMenuModule
 
   ],
   providers: [

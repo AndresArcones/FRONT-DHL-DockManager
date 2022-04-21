@@ -1,0 +1,33 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" *ngIf="KPI">
+    <div class="">Porcentaje reservas canceladas mes
+      <div style="text-align: center;" >{{KPI.porReservasCanceladasMes | number}}%</div>
+    </div>
+    <div class="">Porcentaje retrasos en llegada
+      <div style="text-align: center;" >{{KPI.porRetrasosLllegada | number}}%</div>
+    </div>
+    <div class="">Porcentaje utilizacion de los muelles en base a disponibilidad
+      <div style="text-align: center;" >{{KPI.porUtilizacionMuelle | number}}%</div>
+    </div>
+  
+  </div>
+  <hr style="padding:1vh">
+  <h1 style="text-align: center;"><strong>Estadisticas por Muelle</strong></h1>
+
+<mat-table *ngIf="muelleSource" [dataSource]="muelleSource" class="mat-elevation-z8">
+
+    <!-- id Column -->
+    <ng-container matColumnDef="nombre">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> nombre </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let muelle"> {{muelle.nombre}} </mat-cell>
+    </ng-container>
+  
+    <!-- horaEntrada Column -->
+    <ng-container matColumnDef="porUso">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> porUso </mat-header-cell>
+      <mat-cell mat-cell *matCellDef="let muelle"> {{muelle.porUso}} %</mat-cell>
+    </ng-container>
+
+    <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+  </mat-table>

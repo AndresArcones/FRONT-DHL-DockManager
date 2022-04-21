@@ -1,0 +1,7 @@
+
+<h1 style="text-align: center;"><strong><label for="time">Simulacion de hora</label></strong></h1>
+<div class="p-field p-col-12 p-md-4" style="text-align: center;">
+    <p-calendar [(ngModel)]="date1" [showTime]="true" inputId="time" (onSelect)="llamar()"></p-calendar>
+</div>
+<span *ngIf="simulacion">Se ha realizado la simulacion</span>
+

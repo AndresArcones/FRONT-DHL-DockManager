@@ -1,3 +1,5 @@
+import { LayoutAlignStyleBuilder } from "@angular/flex-layout";
+
 export interface MuelleInt {
     id: string
     nombre: string
@@ -8,6 +10,8 @@ export interface MuelleInt {
     estado: string;
 
 }
+
+// estado LayoutAlignStyleBuilder, ocupado, anulado
 
 export class Muelle implements MuelleInt {
     id: string;
