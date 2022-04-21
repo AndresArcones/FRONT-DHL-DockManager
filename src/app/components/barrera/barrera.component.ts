@@ -33,7 +33,7 @@ export class BarreraComponent implements OnInit {
     //from form
     this.matricula = matricula;
 
-    this.reservaServ.enviarMatricula(this.matricula)
+    this.reservaServ.enviarMatricula()
     .subscribe(resp => {
       if (resp.status === 200) {
         this.matricula = resp.body!;
