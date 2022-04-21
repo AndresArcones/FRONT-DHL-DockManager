@@ -1,10 +1,13 @@
 
 <h1 style="text-align: center;"><strong><label for="time">Simulacion de hora</label></strong></h1>
 <div class="p-field p-col-12 p-md-4" style="text-align: center;">
-    <p-calendar [(ngModel)]="date1" [showTime]="true" inputId="time" (onSelect)="llamar()"></p-calendar>
+    <p-calendar [(ngModel)]="date1" [showTime]="true" inputId="time"></p-calendar>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center">
-  <button fxLayoutAlign="center center" (click)="llamarboton()" type="submit" mat-raised-button color="primary">
+  <button fxLayoutAlign="center" (click)="llamar()" type="submit" mat-raised-button color="primary">
+    Enviar hora
+  </button>
+  <button fxLayoutAlign="center " (click)="llamarboton()" type="submit" mat-raised-button color="primary">
     Hora y Fecha actual
   </button>
 </div>
