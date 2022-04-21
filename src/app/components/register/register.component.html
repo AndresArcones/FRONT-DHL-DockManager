@@ -1,6 +1,6 @@
 <!-- Section: Design Block -->
 
-<body> class="text-center text-lg-start">
+<body>
   <style>
     .cascading-right {
       margin-right: -50px;
@@ -11,7 +11,6 @@
         margin-right: 0;
       }
     }
-
   </style>
 
   <!-- Jumbotron -->
@@ -24,33 +23,35 @@
                       ">
 
           <div class="card-body p-5 shadow-5 text-center">
-            <h2 class="fw-bold mb-5">Register to SQUID</h2>
+            <h2 class="fw-bold mb-5">Registrate en el Gestor de Muelles de DHL</h2>
             <form (ngSubmit)="register()">
 
               <!-- Email input -->
               <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Correo electrónico:</label>
                 <input [(ngModel)]="newUsuario.usuario" name="email" type="text" id="form3Example3"
                   class="form-control" />
-                <label class="form-label" for="form3Example3">Email address</label>
+
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4">Contraseña:</label>
                 <input [(ngModel)]="newUsuario.contrasenia" name="password" type="password" id="form3Example4"
                   class="form-control" />
-                <label class="form-label" for="form3Example4">Password</label>
+
               </div>
 
 
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign up
+              <button color="primary" mat-raised-button type="submit" class="btn btn-primary btn-block mb-4">
+                Register
               </button>
 
               <div class="col">
                 <!-- back to login button -->
-                <button routerLink="" type="button" class="btn btn-outline-primary">
-                  Back to Log In
+                <button color="accent" mat-raised-button routerLink="" type="button" class="btn btn-outline-primary">
+                  Vuelta al Log In
                 </button>
 
               </div>

@@ -11,7 +11,6 @@
           margin-right: 0;
         }
       }
-
     </style>
 
     <!-- Jumbotron -->
@@ -26,33 +25,38 @@
                     backdrop-filter: blur(30px);
                     ">
             <div class="card-body p-5 shadow-5 text-center">
-              <h2 class="fw-bold mb-5">Log in to SQUID</h2>
+              <h2 class="fw-bold mb-5">Autentícate en el Gestor de Muelles de DHL</h2>
               <form (ngSubmit)="logIn()">
+
+
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3">Correo electrónico:</label>
                   <input [(ngModel)]="email" name="email" type="text" id="form3Example3" class="form-control"
                     placeholder="email..." />
-                  <label class="form-label" for="form3Example3">Email address</label>
+
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4">Constraseña:</label>
                   <input [(ngModel)]="password" name="password" type="password" id="form3Example4" class="form-control"
                     placeholder="password..." />
-                  <label class="form-label" for="form3Example4">Password</label>
+
                 </div>
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">
-                  Sign up
+                <button color="primary" mat-raised-button type="submit" class="btn btn-primary btn-block mb-4">
+                  Log In
                 </button>
 
                 <!-- Register buttons -->
                 <div class="text-center">
                   <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Don't have an account?</p>
-                    <button routerLink="/register" type="button" class="btn btn-outline-primary">Create new</button>
+                    <p class="mb-0 me-2">No tienes cuenta?</p>
+                    <button color="accent" mat-raised-button routerLink="/register" type="button"
+                      class="btn btn-outline-primary">Registrate</button>
                   </div>
 
                 </div>
