@@ -35,7 +35,7 @@
   <!-- fechaHoraReserva Column -->
   <ng-container matColumnDef="fechaHoraReserva">
     <mat-header-cell mat-header-cell *matHeaderCellDef> fechaHoraReserva </mat-header-cell>
-    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.fechaHoraReserva}} </mat-cell>
+    <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.fechaHoraReserva | date:'short':'UTC'}} UTC </mat-cell>
   </ng-container>
 
   <!-- tipoCamion Column -->
