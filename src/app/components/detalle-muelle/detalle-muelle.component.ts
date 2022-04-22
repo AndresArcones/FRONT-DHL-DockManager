@@ -73,14 +73,13 @@ export class DetalleMuelleComponent implements OnInit {
     this.reserva.idMuelle = this.muelle.id;
     this.reserva.actividad = this.muelle.tipoMuelle;
     this.reserva.tipoCamion = this.muelle.tipoCamion;
-    // this.reserva.fechaHoraReserva = new Date(); FALTA
 
     this.reservaServ.reservar(this.reserva)
       .subscribe(resp => {
 
         console.log(resp.body);
       })
-    // location.reload()
+    location.reload()
   }
 
 }

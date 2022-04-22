@@ -26,10 +26,12 @@ export class MuellesComponent implements OnInit {
 
       .subscribe(resp => {
         if (resp.status === 200) {
-
-          this.muelles = resp.body!;
+          if (this.auth.hasRole('ROL_ADMIN')) {
+            this.muelles = resp.body!;
+          }
+          console.log(resp.body!);
           if (this.auth.hasRole('ROL_USER')) {
-            this.muelles=this.limpiarMuelles(this.muelles)
+            this.muelles = this.limpiarMuelles(resp.body!)
           }
 
           console.log(this.muelles);
@@ -41,21 +43,33 @@ export class MuellesComponent implements OnInit {
         }
       })
 
-      this.auth.retrieveUser()
+    this.auth.retrieveUser()
       .subscribe(resp => {
         this.usuario = resp.body!
       })
+
+
   }
 
   ngOnInit(): void {
   }
 
-  limpiarMuelles(muelles: Muelle[]){
+  limpiarMuelles(muelles: Muelle[]) {
     let resultado: Muelle[] = [];
     muelles.forEach(muelle => {
-      if(muelle.estado==='libre'){
+      let contador: number = 0
+      muelle.reservas.forEach(reserva => {
+        if (reserva != null) {
+          contador++
+
+        }
+
+      })
+      console.log(contador);
+      if (muelle.reservas.length > contador) {
         resultado.push(muelle);
       }
+
     });
     return resultado
   }
