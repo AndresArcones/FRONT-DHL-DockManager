@@ -8,6 +8,11 @@
     <mat-header-cell mat-header-cell *matHeaderCellDef> id </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.id}} </mat-cell>
   </ng-container>
+  <!-- nombre del muelle Column -->
+  <ng-container matColumnDef="nombremuelle">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Muelle </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.nombremuelle}} </mat-cell>
+  </ng-container>
 
   <!-- horaEntrada Column -->
   <ng-container matColumnDef="horaEntrada">

@@ -1,3 +1,4 @@
+import { Pedidosdia } from './../../interfaces/pedidosdia';
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from 'src/app/interfaces/pedido';
 import { MuelleService } from 'src/app/services/muelles.service';
@@ -9,9 +10,9 @@ import { MuelleService } from 'src/app/services/muelles.service';
 })
 export class PedidosdiaComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'horaEntrada', 'horaSalida', 'estado', 'matricula','retraso','tiempoTardado'];
-  dataSource: Pedido[] = [];
-  reservasPlataforma: Pedido[] = []
+  displayedColumns: string[] = ['id', 'nombremuelle','horaEntrada', 'horaSalida', 'estado', 'matricula','retraso','tiempoTardado'];
+  dataSource: Pedidosdia[] = [];
+  reservasPlataforma: Pedidosdia[] = []
 
   constructor(private muelleServ:MuelleService) { }
 
@@ -19,7 +20,7 @@ export class PedidosdiaComponent implements OnInit {
     this.muelleServ.mostrarPedidosDia()
       .subscribe(resp => {
         if (resp.status === 200) {
-          this.reservasPlataforma = resp.body!.map(pedido => Object.assign(new Pedido(), pedido));
+          this.reservasPlataforma = resp.body!.map(pedido => Object.assign(new Pedidosdia(), pedido));
           this.dataSource = this.reservasPlataforma;
           console.log(this.dataSource);
         }
