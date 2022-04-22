@@ -67,11 +67,11 @@ export class SimularhoraComponent implements OnInit {
     const hora: HoraDto = {
       "hora": this.date1.getTime()
     }
-    this.comprobacion = true;
+    // this.comprobacion = true;
     this.reservaServ.enviarSimulacion(hora)
       .subscribe(resp => {
         if (resp.status === 200) {
-          this.comprobacion = true;
+          // this.comprobacion = true;
           console.log(hora);
           Swal.fire("Hora cambiada", "Hora cambiada correctamente", "success")
         }
@@ -85,14 +85,14 @@ export class SimularhoraComponent implements OnInit {
     const hora: HoraDto = {
       "hora": -1
     }
-    this.comprobacion = true;
+    // this.comprobacion = true;
     this.reservaServ.enviarSimulacion(hora)
       .subscribe(resp => {
         if (resp.status === 200) {
 
-          this.comprobacion = true;
+          // this.comprobacion = true;
           console.log(hora);
-          Swal.fire("Hora cambiada", "Hora cambiada correctamente", "success")
+          Swal.fire("Hora cambiada", "Hora restablecida correctamente", "success")
         }
       }, err => {
         this.comprobacion = false

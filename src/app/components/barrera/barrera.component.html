@@ -1,5 +1,6 @@
-<h1 style="text-align: center;"><strong>Comprobar Acceso</strong></h1>
-<div fxLayout="row" fxLayoutAlign="center center">
+<div class="col animate__animated animate__fadeIn">
+  <h1 style="text-align: center;"><strong>Comprobar Acceso</strong></h1>
+  <div fxLayout="row" fxLayoutAlign="center center">
     <form [formGroup]="formBarrera">
       <mat-form-field appearance="fill">
         <mat-label>Matricula</mat-label>
@@ -7,10 +8,11 @@
       </mat-form-field>
     </form>
   </div>
-  
+
   <div fxLayout="row" fxLayoutAlign="center center">
-    <button fxLayoutAlign="center center" (click)="enviarMatricula();formBarrera.reset();" type="submit" mat-raised-button color="primary">
+    <button fxLayoutAlign="center center" (click)="enviarMatricula();formBarrera.reset();" type="submit"
+      mat-raised-button color="primary">
       Activar Barrera
     </button>
   </div>
-
+</div>

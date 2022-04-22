@@ -1,10 +1,56 @@
-<h1 style="text-align: center;"><strong>Cargar Muelle</strong></h1>
-
-<ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)"
-  (onFileLeave)="fileLeave($event)" dropZoneClassName="drop-file">
-  <ng-template dropZoneClassName="letras" ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-    <div style="text-align: center ;">
-      <span style="color: #a2a2a2; margin-right: 0.5vw ;">drag and drop csv de muelles or</span>
-      <button mat-raised-button color="primary" type="button" (click)="openFileSelector()">Browse
-        Files</button>
+<div class="col animate__animated animate__fadeIn">
+  <div style="width: 100%;" class="d-flex">
+    <div style="width: 100%;">
+      <h2 style="text-align: center;"><strong>Cargar Muelles</strong></h2>
+      <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)"
+        (onFileLeave)="fileLeave($event)" dropZoneClassName="drop-file">
+        <ng-template dropZoneClassName="letras" ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+          <div style="text-align: center ;">
+            <span style="color: #a2a2a2; margin-right: 0.5vw ;">drag and drop csv de muelles or</span>
+            <button mat-raised-button color="primary" type="button" (click)="openFileSelector()">Browse
+              Files</button>
+          </div>
+        </ng-template>
+      </ngx-file-drop>
+      <div class="upload-table">
+        <table class="table">
+          <tbody class="upload-name-style">
+            <tr *ngFor="let item of files; let i=index">
+              <td style="color: #a2a2a2;"><strong>{{ item.relativePath }}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+
+    <div style="width: 100%; margin-left: 1vw;">
+      <h2 style="text-align: center;"><strong>Cargar Pedidos</strong></h2>
+
+      <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped2($event)" (onFileOver)="fileOver2($event)"
+        (onFileLeave)="fileLeave2($event)" dropZoneClassName="drop-file">
+        <ng-template dropZoneClassName="letras" ngx-file-drop-content-tmp let-openFileSelector="openFileSelector2">
+          <div style="text-align: center ;">
+            <span style="color: #a2a2a2; margin-right: 0.5vw ;">drag and drop csv de muelles or</span>
+            <button mat-raised-button color="primary" type="button" (click)="openFileSelector()">Browse
+              Files</button>
+          </div>
+        </ng-template>
+      </ngx-file-drop>
+      <div class="upload-table">
+        <table class="table">
+          <tbody class="upload-name-style">
+            <tr *ngFor="let item of files2; let i=index">
+              <td style="color: #a2a2a2;"><strong>{{ item.relativePath }}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button fxLayoutAlign="center center" (click)="subirFichero()" type="submit" mat-raised-button color="primary">
+      Subir ficheros
+    </button>
+  </div>
+</div>

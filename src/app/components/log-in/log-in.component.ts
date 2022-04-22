@@ -43,8 +43,4 @@ export class LogInComponent {
       });
   }
 
-  logOut() {
-    this.auth.logOut();
-  }
-
 }

@@ -1,10 +1,9 @@
-
-
-<h1 style="text-align: center;"><strong>Reservas Totales</strong></h1>
-<mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8">
+<h1 class="col animate__animated animate__fadeIn" style="text-align: center;"><strong>Reservas Totales</strong></h1>
+<mat-table *ngIf="dataSource" [dataSource]="dataSource" class="mat-elevation-z8 col animate__animated
+  animate__fadeIn">
   <!-- id Column -->
   <ng-container matColumnDef="id">
-    <mat-header-cell mat-header-cell *matHeaderCellDef > id </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> id </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva" style="margin-right: 3%;"> {{reserva.id}} </mat-cell>
   </ng-container>
 

@@ -1,15 +1,23 @@
+<div class="col animate__animated animate__fadeIn">
+  <h1 style="text-align: center;"><strong><label for="time">Simular hora</label></strong></h1>
 
-<h1 style="text-align: center;"><strong><label for="time">Simulacion de hora</label></strong></h1>
-<div class="p-field p-col-12 p-md-4" style="text-align: center;">
+  <div style="margin-bottom: 2vh;" fxLayout="row" fxLayoutAlign="center center">
     <p-calendar [(ngModel)]="date1" [showTime]="true" inputId="time"></p-calendar>
-</div>
-<div fxLayout="row" fxLayoutAlign="center center">
-  <button fxLayoutAlign="center" (click)="llamar()" type="submit" mat-raised-button color="primary">
-    Enviar hora
-  </button>
-  <button fxLayoutAlign="center " (click)="llamarboton()" type="submit" mat-raised-button color="primary">
-    Hora y Fecha actual
-  </button>
-</div>
-<span class="center" *ngIf="comprobacion">Se ha realizado la simulacion</span>
+    <button style="margin-left: 1vw;" fxLayoutAlign="center" (click)="llamar()" type="submit" mat-raised-button
+      color="primary">
+      Enviar hora
+    </button>
 
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div style="text-align: center;">
+      <button fxLayoutAlign="center " (click)="llamarboton()" type="submit" mat-raised-button color="primary">
+        Restablecer hora y fecha
+      </button>
+    </div>
+
+  </div>
+
+  <span class="center" *ngIf="comprobacion">Se ha realizado la simulacion</span>
+</div>

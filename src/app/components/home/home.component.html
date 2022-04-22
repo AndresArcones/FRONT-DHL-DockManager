@@ -52,26 +52,20 @@
       <mat-icon>assignment</mat-icon>
       <span>Ver Pedidos</span>
       <mat-menu #pedidos="matMenu">
-        <button mat-menu-item routerLink="/home/pedidos"><mat-icon>calendar_today</mat-icon>Ver Todos los pedidos</button>
-        <button mat-menu-item routerLink="/home/pedidosdia"><mat-icon>today</mat-icon>Ver Pedidos del dia</button>
+        <button mat-menu-item routerLink="/home/pedidos">
+          <mat-icon>calendar_today</mat-icon>Ver Todos los pedidos
+        </button>
+        <button mat-menu-item routerLink="/home/pedidosdia">
+          <mat-icon>today</mat-icon>Ver Pedidos del dia
+        </button>
       </mat-menu>
     </button>
 
- 
-
     <!-- RESERVAS TRANSPORTISTAS-->
-    <button *ngIf="this.auth.hasRole('ROL_USER')" mat-button class="menu-button" routerLink="/home/reservastransportistas">
+    <button *ngIf="this.auth.hasRole('ROL_USER')" mat-button class="menu-button"
+      routerLink="/home/reservastransportistas">
       <mat-icon>video_label</mat-icon>
-      <span>Pantalla NFT</span>
-    </button> 
-
-
-
-    <mat-divider></mat-divider>
-
-    <button mat-button class="menu-button" routerLink="/home/simularhora">
-      <mat-icon>alarm</mat-icon>
-      <span>Simular Hora</span>
+      <span>Pantalla TFT</span>
     </button>
 
     <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" routerLink="/home/estadisticas">
@@ -79,14 +73,27 @@
       <span>Estadisticas</span>
     </button>
 
+
+
+    <mat-divider></mat-divider>
+
     <button mat-button class="menu-button" routerLink="/home/barrera">
       <mat-icon>time_to_leave</mat-icon>
       <span>Probar Acceso</span>
     </button>
 
+    <button mat-button class="menu-button" routerLink="/home/simularhora">
+      <mat-icon>alarm</mat-icon>
+      <span>Simular Hora</span>
+    </button>
+
+
+
+
+
     <button mat-button *ngIf="this.auth.hasRole('ROL_ADMIN')" class="menu-button" routerLink="/home/cargarmuelle">
       <mat-icon>autorenew</mat-icon>
-      <span>Cargar Muelle</span>
+      <span>Cargar Datos</span>
     </button>
     <mat-divider></mat-divider>
     <button (click)="this.auth.logOut()" mat-button class="menu-button" routerLink="/help">
