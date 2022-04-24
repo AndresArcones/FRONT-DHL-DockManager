@@ -129,7 +129,7 @@ export class CargarmuelleComponent implements OnInit {
 
             Swal.fire("Cargar Datos", "Datos cargados correctamente", "success");
           }, err => {
-            Swal.fire("Cargar Datos", "Los Datos no han podido ser cargados", "error");
+            Swal.fire("Cargar Datos", err.error.message, "error");
           })
       });
     }
@@ -142,7 +142,7 @@ export class CargarmuelleComponent implements OnInit {
 
             Swal.fire("Cargar Datos", "Datos cargados correctamente", "success");
           }, err => {
-            Swal.fire("Cargar Datos", "Los datos no han podido ser cargados", "error");
+            Swal.fire("Cargar Datos", err.error.message, "error");
           })
       });
 

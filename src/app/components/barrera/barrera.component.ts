@@ -41,7 +41,7 @@ export class BarreraComponent implements OnInit {
           Swal.fire("Barrera", "Barrera abierta", "success")
         }
       }, err => {
-        Swal.fire("Barrera", err.error.message, "error");
+        Swal.fire("Barrera", "Barrera no se abre", "error");
       })
   }
 

@@ -17,13 +17,13 @@
       <!-- horaEntrada Column -->
       <ng-container matColumnDef="horaEntrada">
         <mat-header-cell mat-header-cell *matHeaderCellDef> horaEntrada </mat-header-cell>
-        <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.horaEntrada}} </mat-cell>
+        <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.horaEntrada | date:'short':'UTC'}} UTC </mat-cell>
       </ng-container>
 
       <!-- horaSalida Column -->
       <ng-container matColumnDef="horaSalida">
         <mat-header-cell mat-header-cell *matHeaderCellDef> horaSalida </mat-header-cell>
-        <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.horaSalida}} </mat-cell>
+        <mat-cell mat-cell *matCellDef="let pedido"> {{pedido.horaSalida | date:'short':'UTC'}} UTC </mat-cell>
       </ng-container>
 
       <!-- estado Column -->
