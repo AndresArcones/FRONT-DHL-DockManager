@@ -19,7 +19,7 @@ export class DetalleMuelleComponent implements OnInit {
 
   horarios: number = 0;
 
-  tramos: Array<string> = ['6:00-7:00 UTC', '7:00-8:00 UTC', '8:00-9:00 UTC', '10:00-11:00 UTC', '11:00-12:00 UTC', '12:00-13:00 UTC', '13:00-14:00 UTC', '14:00-15:00 UTC']
+  tramos: Array<string> = ['6:00-7:00 UTC', '7:00-8:00 UTC', '8:00-9:00 UTC', '9:00-10:00 UTC', '10:00-11:00 UTC', '11:00-12:00 UTC', '12:00-13:00 UTC', '13:00-14:00 UTC']
 
   muelle: Muelle = new Muelle();
   reserva: ReservaDto = new ReservaDto();

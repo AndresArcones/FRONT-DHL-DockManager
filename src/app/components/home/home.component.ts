@@ -6,6 +6,9 @@ import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { AutenticacionService } from '../../services/autenticacion.service';
 import { RetieveUsuarioDto } from 'src/app/interfaces/retrieve-usuario-dto';
+import { ReservasService } from '../../services/reservas.service';
+import { Hora } from '../../interfaces/hora';
+import { Observable, interval } from 'rxjs';
 
 
 @UntilDestroy()
@@ -19,14 +22,26 @@ export class HomeComponent {
   sidenav!: MatSidenav;
 
   usuario: RetieveUsuarioDto = new RetieveUsuarioDto();
+  fechaHora: Hora | undefined = undefined;
 
-  constructor(private observer: BreakpointObserver, private router: Router, public auth: AutenticacionService) {
+  constructor(private observer: BreakpointObserver, private router: Router, public auth: AutenticacionService, public reservServ: ReservasService) {
     this.auth.retrieveUser()
       .subscribe(resp => {
         this.usuario = resp.body!
       })
 
 
+
+    //setInterval(this.everyTime, 3000);
+    const source = interval(500);
+    source.subscribe(val => this.everyTime());
+
+  }
+
+  everyTime() {
+    this.reservServ.getHoraSimulada().subscribe(resp => {
+      this.fechaHora = resp.body!
+    });
   }
 
   ngAfterViewInit() {

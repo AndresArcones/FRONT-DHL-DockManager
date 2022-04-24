@@ -16,7 +16,8 @@ export class BarreraComponent implements OnInit {
 
   formBarrera: FormGroup;
   matricula: FormControl = new FormControl('')
-  comprobacion: boolean = false;
+
+
 
   constructor(private reservaServ: ReservasService, private activatedRoute: ActivatedRoute) {
     this.formBarrera = new FormGroup({
@@ -30,22 +31,21 @@ export class BarreraComponent implements OnInit {
 
   enviarMatricula() {
 
-    const mat: Matricula = {
+    let mat: Matricula = {
       "matricula": this.formBarrera.get("matricula")?.value
     }
 
     this.reservaServ.enviarMatricula(mat)
       .subscribe(resp => {
         if (resp.status === 200) {
-          this.matricula = resp.body!;
-          this.comprobacion = true;
-          console.log(this.matricula);
-          Swal.fire("Matricula introducida", "Matricula introducida correctamente ", "success")
+          Swal.fire("Barrera", "Barrera abierta", "success")
         }
       }, err => {
-        this.comprobacion = false
-        Swal.fire("Matricula", err.error.message, "error");
+        Swal.fire("Barrera", err.error.message, "error");
       })
   }
+
+
+
 
 }

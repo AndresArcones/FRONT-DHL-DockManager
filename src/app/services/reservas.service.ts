@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ReservaDto } from '../interfaces/reserva-dto';
 import { HoraDto } from '../interfaces/hora-dto';
 import { Matricula } from '../interfaces/form-barrera';
+import { Hora } from '../interfaces/hora';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,9 @@ export class ReservasService {
   private _urlEndpointAnularReservas: string = "http://localhost:8080/api/reserva/anular"
   private _urlEndpointEnviarMatricula: string = "http://localhost:8080/api/barrera"
   private _urlEndpointEnviarSimulacion: string = "http://localhost:8080/api/hora"
+  private _urlEndpointGetHora: string = "http://localhost:8080/api/hora_simulada"
+
+
 
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -66,5 +70,9 @@ export class ReservasService {
     return this.http.post<any>(this._urlEndpointEnviarSimulacion, JSON.stringify(hora), { headers: httpHeaders, observe: "response" });
   }
 
+  getHoraSimulada(): Observable<HttpResponse<Hora>> {
+
+    return this.http.get<Hora>(this._urlEndpointGetHora, { observe: "response" });
+  }
 
 }

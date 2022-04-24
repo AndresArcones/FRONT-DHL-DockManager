@@ -39,6 +39,9 @@ export class LogInComponent {
         if (err.status === 403) {
           Swal.fire("Login", "Email or password incorrect", "error")
         }
+        if (err.status === 401) {
+          Swal.fire("Login", "Email or password incorrect", "error")
+        }
 
       });
   }

@@ -10,23 +10,25 @@ import { MuelleService } from 'src/app/services/muelles.service';
 })
 export class PedidosdiaComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'nombremuelle','horaEntrada', 'horaSalida', 'estado', 'matricula','retraso','tiempoTardado'];
-  dataSource: Pedidosdia[] = [];
-  reservasPlataforma: Pedidosdia[] = []
+  displayedColumns: string[] = ['id', 'horaEntrada', 'horaSalida', 'estado', 'matricula', 'retraso', 'tiempoTardado'];
+  dataSource: Pedido[] = [];
+  datos: Pedidosdia[] = []
 
-  constructor(private muelleServ:MuelleService) { }
+  constructor(private muelleServ: MuelleService) { }
 
   ngOnInit(): void {
     this.muelleServ.mostrarPedidosDia()
       .subscribe(resp => {
         if (resp.status === 200) {
-          this.reservasPlataforma = resp.body!.map(pedido => Object.assign(new Pedidosdia(), pedido));
-          this.dataSource = this.reservasPlataforma;
-          console.log(this.dataSource);
+          this.datos = resp.body!.map(pedido => Object.assign(new Pedidosdia(), pedido));
+
+          this.datos.forEach(Pedidosdia => {
+            this.dataSource = Pedidosdia.pedidos
+          });
+
+          console.log(this.datos);
         }
       });
-
-    this.dataSource = this.reservasPlataforma;
   }
 
 }
