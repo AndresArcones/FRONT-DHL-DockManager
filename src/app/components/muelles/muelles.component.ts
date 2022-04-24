@@ -56,18 +56,24 @@ export class MuellesComponent implements OnInit {
 
   limpiarMuelles(muelles: Muelle[]) {
     let resultado: Muelle[] = [];
+
     muelles.forEach(muelle => {
+      let muelleDisp: boolean = true;
+      if (muelle.tipoMuelle == "no disponible") {
+        muelleDisp = false;
+      }
       let contador: number = 0
       muelle.reservas.forEach(reserva => {
         if (reserva != null) {
           contador++
-
         }
 
       })
-      console.log(contador);
+
       if (muelle.reservas.length > contador) {
-        resultado.push(muelle);
+        if (muelleDisp) {
+          resultado.push(muelle);
+        }
       }
 
     });
