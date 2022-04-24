@@ -6,9 +6,11 @@
         <div *ngIf="!estaLleno(muelle) || auth.hasRole('ROL_ADMIN')" class="card shadow-sm">
           <h1 style=" margin: auto; text-align: center; color: white;">Muelle: {{muelle.nombre}}
           </h1>
-          <img (click)="openMuelle(muelle.id)" *ngIf="muelle.estado === 'libre' && !estaLleno(muelle)"
+          <img (click)="openMuelle(muelle.id)"
+            *ngIf="muelle.estado === 'libre' && !estaLleno(muelle) && muelle.tipoMuelle !== 'no disponible'"
             src="./assets/muelle.jpg" alt="">
-          <img *ngIf="muelle.estado === 'ocupado' || estaLleno(muelle) " src=".\assets\muelleRojo.jpg" alt="">
+          <img *ngIf="muelle.estado === 'ocupado' || muelle.tipoMuelle === 'no disponible'  || estaLleno(muelle) "
+            src=".\assets\muelleRojo.jpg" alt="">
 
 
           <div class="card-body">
@@ -19,9 +21,10 @@
             <h3 (click)="openMuelle(muelle.id)" class="card-text">
               {{ "Apertura-Cierre: " + muelle.aperturaMuelle+ "-" + calcularHoraMuelle(muelle)}}
             </h3>
-            <h3 (click)="openMuelle(muelle.id)" class="card-text">
+            <h3 *ngIf="muelle.tipoMuelle !== 'no disponible'" (click)="openMuelle(muelle.id)" class="card-text">
               {{ "Estado: "+muelle.estado}}
             </h3>
+            <h3 *ngIf="muelle.tipoMuelle === 'no disponible'"> <br> </h3>
 
             <div class="d-flex justify-content-between align-items-center">
               <small class="text-muted"> </small>
