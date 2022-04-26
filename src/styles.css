@@ -31,3 +31,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .drop-file > ng-template{
     color: #a2a2a2;
 }
+
+.fondo-dhl {
+   background-image: url(src\assets\dhl-1-logo-svg-vector.svg);
+  background-position: 0%;
+  background-size: 100vw;
+}
+
