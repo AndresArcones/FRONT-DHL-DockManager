@@ -10,6 +10,7 @@ export interface ReservaDtoInt {
     tipoCamion: string,
     tramoHora: number,
     anulada:boolean,
+    realizada:boolean
 }
 
 export class ReservaDto implements ReservaDtoInt {
@@ -24,6 +25,7 @@ export class ReservaDto implements ReservaDtoInt {
     tipoCamion: string
     tramoHora: number
     anulada:boolean
+    realizada:boolean
 
     constructor() {
         this.id = ""
@@ -37,6 +39,7 @@ export class ReservaDto implements ReservaDtoInt {
         this.tipoCamion = ""
         this.tramoHora = -1
         this.anulada=false
+        this.realizada=false
     }
 }
 

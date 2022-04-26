@@ -38,10 +38,10 @@ export class BarreraComponent implements OnInit {
     this.reservaServ.enviarMatricula(mat)
       .subscribe(resp => {
         if (resp.status === 200) {
-          Swal.fire("Barrera", "Barrera abierta", "success")
+          Swal.fire("Barrera", "La barrera se ha abierto", "success")
         }
       }, err => {
-        Swal.fire("Barrera", "Barrera no se abre", "error");
+        Swal.fire("Barrera", "La barrera no se ha abierto", "error");
       })
   }
 

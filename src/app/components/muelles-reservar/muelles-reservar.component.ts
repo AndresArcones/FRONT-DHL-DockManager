@@ -137,6 +137,7 @@ export class MuellesReservarComponent implements OnInit {
     this.reservaServ.reservar(this.reserva)
       .subscribe(resp => {
         Swal.fire("Reserva", "Reserva realizada correctamente", "success")
+        this.router.navigate(["/home/misReservas"])
         console.log(resp.body);
       }, err => {
         Swal.fire("Reserva", "La reserva no se pudo realizar", "error")

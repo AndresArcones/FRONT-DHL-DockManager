@@ -33,15 +33,15 @@ export class LogInComponent {
           const roles = JSON.parse(atob(token.split(".")[1])).roles;
           localStorage.setItem("roles", JSON.stringify(roles));
 
-          Swal.fire("Login", "Succesfully Logged In", "success")
+          Swal.fire("Login", "Bienvenido " + usuario + ", has iniciado sesión correctamente", "success")
           this.router.navigate(["/home"]);
         }
       }, err => {
         if (err.status === 403) {
-          Swal.fire("Login", "Email or password incorrect", "error")
+          Swal.fire("Login", "Email o contraseña incorrecta", "error")
         }
         if (err.status === 401) {
-          Swal.fire("Login", "Email or password incorrect", "error")
+          Swal.fire("Login", "Email o contraseña incorrecta", "error")
         }
 
       });

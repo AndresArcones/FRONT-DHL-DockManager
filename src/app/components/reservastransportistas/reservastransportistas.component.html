@@ -5,21 +5,21 @@
 
   <!-- Nombremuelle Column -->
   <ng-container matColumnDef="nombreMuelle">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> nombreMuelle </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Nombre del Muelle </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.nombreMuelle}} </mat-cell>
   </ng-container>
 
 
   <!-- matricula Column -->
   <ng-container matColumnDef="matricula">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> matricula </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Matricula </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.matricula}} </mat-cell>
   </ng-container>
 
 
   <!-- fechaHoraReserva Column -->
   <ng-container matColumnDef="fechaHoraReserva">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> fechaHoraReserva </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Fecha y Hora de la Reserva </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.fechaHoraReserva | date:'short':'UTC'}} UTC</mat-cell>
   </ng-container>
 

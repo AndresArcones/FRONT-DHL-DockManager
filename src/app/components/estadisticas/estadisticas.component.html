@@ -1,11 +1,11 @@
 <div fxLayout="row" fxLayoutAlign="space-around center" *ngIf="KPI" class="col animate__animated animate__fadeIn">
-  <div class="">Porcentaje reservas canceladas mes
+  <div class="">Porcentaje de Reservas Canceladas por Mes
     <div style="text-align: center;">{{KPI.porReservasCanceladasMes | number}}%</div>
   </div>
-  <div class="">Porcentaje retrasos en llegada
+  <div class="">Porcentaje de Retrasos en la Llegada
     <div style="text-align: center;">{{KPI.porRetrasosLllegada | number}}%</div>
   </div>
-  <div class="">Porcentaje utilizacion de los muelles en base a disponibilidad
+  <div class="">Porcentaje de Utilización de los Muelles en Base a la Disponibilidad
     <div style="text-align: center;">{{KPI.porUtilizacionMuelle | number}}%</div>
   </div>
 
@@ -18,13 +18,13 @@
 
   <!-- id Column -->
   <ng-container matColumnDef="nombre">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> nombre </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Nombre del Muelle </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let muelle"> {{muelle.nombre}} </mat-cell>
   </ng-container>
 
   <!-- horaEntrada Column -->
   <ng-container matColumnDef="porUso">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> porUso </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Uso del Muelle </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let muelle"> {{muelle.porUso}} %</mat-cell>
   </ng-container>
 

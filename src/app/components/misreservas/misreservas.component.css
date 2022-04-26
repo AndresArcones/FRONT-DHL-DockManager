@@ -1,0 +1,12 @@
+mat-header-cell {
+    justify-content: center;
+   }
+
+   mat-cell{
+    
+    justify-content: center;
+   }
+
+.accion{
+    width: 100%;
+}

@@ -3,49 +3,49 @@
   animate__fadeIn">
   <!-- id Column -->
   <ng-container matColumnDef="id">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> id </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva" style="margin-right: 3%;"> {{reserva.id}} </mat-cell>
   </ng-container>
 
   <!-- nombreMuelle Column -->
   <ng-container matColumnDef="nombreMuelle">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> nombreMuelle </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Nombre del Muelle </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva">{{reserva.nombreMuelle}} </mat-cell>
   </ng-container>
 
   <!-- dni Column -->
   <ng-container matColumnDef="dni">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> dni </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> DNI </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.dni}} </mat-cell>
   </ng-container>
 
   <!-- matricula Column -->
   <ng-container matColumnDef="matricula">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> matricula </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Matricula </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.matricula}} </mat-cell>
   </ng-container>
 
   <!-- idPedido Column -->
   <ng-container matColumnDef="idPedido">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> idPedido </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> ID del Pedido </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.idPedido}} </mat-cell>
   </ng-container>
 
   <!-- actividad Column -->
   <ng-container matColumnDef="actividad">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> actividad </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Actividad </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.actividad}} </mat-cell>
   </ng-container>
 
   <!-- fechaHoraReserva Column -->
   <ng-container matColumnDef="fechaHoraReserva">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> fechaHoraReserva </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Fecha y Hora de la Reserva </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.fechaHoraReserva | date:'short':'UTC'}} UTC </mat-cell>
   </ng-container>
 
   <!-- tipoCamion Column -->
   <ng-container matColumnDef="tipoCamion">
-    <mat-header-cell mat-header-cell *matHeaderCellDef> tipoCamion </mat-header-cell>
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Tipo de Camión </mat-header-cell>
     <mat-cell mat-cell *matCellDef="let reserva"> {{reserva.tipoCamion}} </mat-cell>
   </ng-container>
 
