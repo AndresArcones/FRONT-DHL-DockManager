@@ -2,6 +2,15 @@
   <div style="margin-right: 1vw;">
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 g-3">
+      <div fxLayout="row" fxLayoutAlign="center center" *ngIf="muelles.length == 0"
+        class=" col animate__animated animate__fadeIn"
+        style="border-color: black; background-color:#b90105; width: 100vw; font-size: large; color: black;">
+        No hay muelles disponibles, para el pedido: <span style="color: white;">
+          &nbsp;{{this.idPedido| titlecase}}&nbsp;</span> y
+        tipo de camión:
+        <span style="color: white;">&nbsp;{{this.tipoCamion | titlecase}}&nbsp;</span> a las <span
+          style="color: white;">&nbsp;{{this.tramos[this.tramo]}}&nbsp;</span>
+      </div>
       <div *ngFor="let muelle of muelles" style="cursor:pointer;" class="col animate__animated animate__fadeIn">
         <div *ngIf="!estaLleno(muelle)" class="card shadow-sm">
           <h1 style=" margin: auto; text-align: center; color: white;">Muelle: {{muelle.nombre}}
@@ -34,5 +43,3 @@
     </div>
   </div>
 </div>
-
-<app-footer></app-footer>

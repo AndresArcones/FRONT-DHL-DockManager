@@ -19,7 +19,7 @@ import { ReservasService } from 'src/app/services/reservas.service';
 })
 export class MuellesReservarComponent implements OnInit {
 
-
+  tramos: Array<string> = ['6:00-7:00 UTC', '7:00-8:00 UTC', '8:00-9:00 UTC', '9:00-10:00 UTC', '10:00-11:00 UTC', '11:00-12:00 UTC', '12:00-13:00 UTC', '13:00-14:00 UTC']
   muelles: Muelle[] = [];
   usuario: RetieveUsuarioDto = new RetieveUsuarioDto();
   @Input() dni: string = ""
@@ -89,6 +89,7 @@ export class MuellesReservarComponent implements OnInit {
 
       });
     }
+    console.log(resultado);
     return resultado
   }
 
