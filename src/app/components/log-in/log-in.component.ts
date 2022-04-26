@@ -17,6 +17,7 @@ export class LogInComponent {
   constructor(private auth: AutenticacionService, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   logIn() {

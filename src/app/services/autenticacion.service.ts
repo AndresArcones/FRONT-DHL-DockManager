@@ -28,7 +28,9 @@ export class AutenticacionService {
   logOut() {
     localStorage.clear();
     this.router.navigate([""]);
-    Swal.fire("Log Out", "You correctly logged out", "success")
+    //Swal.fire("Log Out", "You correctly logged out", "success")
+    // alert("You correctly logged out")
+
 
   }
 

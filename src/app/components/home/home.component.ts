@@ -9,6 +9,7 @@ import { RetieveUsuarioDto } from 'src/app/interfaces/retrieve-usuario-dto';
 import { ReservasService } from '../../services/reservas.service';
 import { Hora } from '../../interfaces/hora';
 import { Observable, interval } from 'rxjs';
+import Swal from 'sweetalert2';
 
 
 @UntilDestroy()
