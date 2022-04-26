@@ -21,6 +21,7 @@ export class MuelleService {
   private _urlEndpointKPIMuelles: string = "http://localhost:8080/api/kpi_muelles"
   private _urlEndpointPedidosHastaAhora: string = "http://localhost:8080/api/pedidos_hasta_ahora"
   private _urlEndpointPedidosDia: string = "http://localhost:8080/api/pedidos_dia"
+  private _urlEndpointPedidoId: string = "http://localhost:8080/api/pedido/"
 
 
 
@@ -55,6 +56,10 @@ export class MuelleService {
   mostrarPedidosDia(): Observable<HttpResponse<Pedido[]>> {
 
     return this.http.get<Pedido[]>(this._urlEndpointPedidosDia, { observe: "response" });
+  }
+
+  mostrarPedidoId(idPedido: string): Observable<HttpResponse<Pedido>> {
+    return this.http.get<Pedido>(this._urlEndpointPedidoId + idPedido, { observe: "response" });
   }
 
 }

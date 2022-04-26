@@ -1,0 +1,69 @@
+<mat-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Introduce los datos de la reserva</ng-template>
+      <table style="width: 100%;" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>DNI</mat-label>
+              <input matInput placeholder="DNI.." formControlName="dni" required>
+            </mat-form-field>
+          <td>
+
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Matricula</mat-label>
+              <input matInput placeholder="Matricula..." formControlName="matricula" required>
+            </mat-form-field>
+          <td>
+
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>idPedido</mat-label>
+              <input matInput placeholder="idPedido..." formControlName="idPedido" required>
+            </mat-form-field>
+          <td>
+
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>tipoCamion</mat-label>
+              <mat-select formControlName="tipoCamion" required>
+                <div>
+                  <mat-option value="furgoneta">Furgoneta</mat-option>
+                  <mat-option value="lona">Lona</mat-option>
+                  <mat-option value="trailer">Trailer</mat-option>
+                </div>
+              </mat-select>
+            </mat-form-field>
+          <td>
+
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Hora</mat-label>
+              <mat-select formControlName="tramo" required>
+                <div *ngFor="let hora of tramos; let i=index">
+                  <mat-option value="{{i}}">
+                    {{tramos[i]}}
+                  </mat-option>
+                </div>
+              </mat-select>
+            </mat-form-field>
+          <td>
+        </tr>
+      </table>
+      <div>
+        <button (click)="setearDatos(stepper)" mat-button>Siguiente</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+
+    <ng-template matStepLabel>Elige muelle a reservar</ng-template>
+    <app-muelles-reservar [dni]="dni" [matricula]="matricula" [pedido]="pedido" [idPedido]="idPedido"
+      [tipoCamion]="tipoCamion" [tramo]="tramo">
+    </app-muelles-reservar>
+
+
+  </mat-step>
+</mat-stepper>

@@ -38,12 +38,16 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { MisreservasComponent } from './components/misreservas/misreservas.component';
 import { SimularhoraComponent } from './components/simularhora/simularhora.component'
 
-import {CalendarModule} from 'primeng/calendar';
+import { CalendarModule } from 'primeng/calendar';
 import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { PedidosdiaComponent } from './components/pedidosdia/pedidosdia.component';
 import { BarreraComponent } from './components/barrera/barrera.component';
+import { ReservarComponent } from './components/reservar/reservar.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MuellesReservarComponent } from './components/muelles-reservar/muelles-reservar.component';
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
 
 
 
@@ -67,6 +71,9 @@ import { BarreraComponent } from './components/barrera/barrera.component';
     EstadisticasComponent,
     PedidosdiaComponent,
     BarreraComponent,
+    ReservarComponent,
+    MuellesReservarComponent,
+    BienvenidaComponent,
 
   ],
   imports: [
@@ -94,7 +101,8 @@ import { BarreraComponent } from './components/barrera/barrera.component';
     MatSelectModule,
     MatTableModule,
     CalendarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule
 
   ],
   providers: [

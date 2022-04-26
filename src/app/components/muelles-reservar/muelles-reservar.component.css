@@ -1,0 +1,7 @@
+.card{
+    background-color: rgba(121, 118, 118, 0.199);
+}
+
+button:hover{
+    background-color: #ffb900;
+}

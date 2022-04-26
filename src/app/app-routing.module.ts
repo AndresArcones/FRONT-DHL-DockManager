@@ -16,6 +16,8 @@ import { CargarmuelleComponent } from './components/cargarmuelle/cargarmuelle.co
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { PedidosdiaComponent } from './components/pedidosdia/pedidosdia.component';
 import { BarreraComponent } from './components/barrera/barrera.component';
+import { ReservarComponent } from './components/reservar/reservar.component';
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
 
 
 const routes: Routes = [
@@ -25,7 +27,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     children: [
-      { path: '', component: MuellesComponent, },
+      { path: '', component: BienvenidaComponent },
       { path: 'muelle/:muelleId', component: DetalleMuelleComponent, },
       { path: 'reservas', component: ReservasComponent, },
       { path: 'misReservas', component: MisreservasComponent, },
@@ -36,6 +38,8 @@ const routes: Routes = [
       { path: 'simularhora', component: SimularhoraComponent, },
       { path: 'cargarmuelle', component: CargarmuelleComponent, },
       { path: 'estadisticas', component: EstadisticasComponent, },
+      { path: 'reservar', component: ReservarComponent, },
+      { path: 'estadoMuelles', component: MuellesComponent, },
     ]
   },
 

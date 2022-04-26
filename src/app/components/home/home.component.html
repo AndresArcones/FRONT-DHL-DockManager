@@ -34,14 +34,18 @@
 
     <mat-divider></mat-divider>
 
-    <button mat-button class="menu-button" routerLink="/home">
+    <button *ngIf="this.auth.hasRole('ROL_ADMIN')" mat-button class="menu-button" routerLink="/home/estadoMuelles">
       <mat-icon>home</mat-icon>
-      <span>Home</span>
+      <span>Estado Muelles</span>
     </button>
     <!--<button mat-button class="menu-button" routerLink="/profile">
       <mat-icon>person</mat-icon>
       <span>Profile</span>
     </button>-->
+    <button *ngIf="this.auth.hasRole('ROL_USER')" mat-button class="menu-button" routerLink="/home/reservar">
+      <mat-icon>today</mat-icon>
+      <span>Reservar</span>
+    </button>
 
     <button *ngIf="this.auth.hasRole('ROL_USER')" mat-button class="menu-button" routerLink="/home/misReservas">
       <mat-icon>today</mat-icon>
