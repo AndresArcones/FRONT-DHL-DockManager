@@ -7,20 +7,21 @@ import { ReservaDto } from '../interfaces/reserva-dto';
 import { HoraDto } from '../interfaces/hora-dto';
 import { Matricula } from '../interfaces/form-barrera';
 import { Hora } from '../interfaces/hora';
+import { URL_ENDPOINT } from '../constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservasService {
 
-  private _urlEndpointReservas: string = "http://localhost:8080/api/reserva"
-  private _urlEndpointMostrarReservas: string = "http://localhost:8080/api/reservas"
-  private _urlEndpointMostrarReservasSiguientes: string = "http://localhost:8080/api/reserva/pantalla"
-  private _urlEndpointMostrarMisReservas: string = "http://localhost:8080/api/mis_reservas"
-  private _urlEndpointAnularReservas: string = "http://localhost:8080/api/reserva/anular"
-  private _urlEndpointEnviarMatricula: string = "http://localhost:8080/api/barrera"
-  private _urlEndpointEnviarSimulacion: string = "http://localhost:8080/api/hora"
-  private _urlEndpointGetHora: string = "http://localhost:8080/api/hora_simulada"
+  private _urlEndpointReservas: string = `${URL_ENDPOINT}/api/reserva`
+  private _urlEndpointMostrarReservas: string = `${URL_ENDPOINT}/api/reservas`
+  private _urlEndpointMostrarReservasSiguientes: string = `${URL_ENDPOINT}/api/reserva/pantalla`
+  private _urlEndpointMostrarMisReservas: string = `${URL_ENDPOINT}/api/mis_reservas`
+  private _urlEndpointAnularReservas: string = `${URL_ENDPOINT}/api/reserva/anular`
+  private _urlEndpointEnviarMatricula: string = `${URL_ENDPOINT}/api/barrera`
+  private _urlEndpointEnviarSimulacion: string = `${URL_ENDPOINT}/api/hora`
+  private _urlEndpointGetHora: string = `${URL_ENDPOINT}/api/hora_simulada`
 
 
 

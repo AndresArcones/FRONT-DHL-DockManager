@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { RegisterUsuarioDto } from '../interfaces/register-Usuario-Dto';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { URL_ENDPOINT } from '../constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-  private _urlEndpoint: string = "http://localhost:8080/api/register"
+  private _urlEndpoint: string = `${URL_ENDPOINT}/api/register`
 
   private _newUsuario: RegisterUsuarioDto = new RegisterUsuarioDto();
 

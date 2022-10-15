@@ -8,20 +8,20 @@ import { Muelle } from '../interfaces/muelle';
 import { KPI } from '../interfaces/kpi';
 import { Pedido } from '../interfaces/pedido';
 import { MuelleStats } from '../interfaces/muellestats';
-
+import { URL_ENDPOINT } from '../constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MuelleService {
 
-  private _urlEndpointMuelles: string = "http://localhost:8080/api/muelles"
-  private _urlEndpointMuelle: string = "http://localhost:8080/api/muelle"
-  private _urlEndpointKPI: string = "http://localhost:8080/api/kpi"
-  private _urlEndpointKPIMuelles: string = "http://localhost:8080/api/kpi_muelles"
-  private _urlEndpointPedidosHastaAhora: string = "http://localhost:8080/api/pedidos_hasta_ahora"
-  private _urlEndpointPedidosDia: string = "http://localhost:8080/api/pedidos_dia"
-  private _urlEndpointPedidoId: string = "http://localhost:8080/api/pedido/"
+  private _urlEndpointMuelles: string = `${URL_ENDPOINT}/api/muelles`
+  private _urlEndpointMuelle: string = `${URL_ENDPOINT}/api/muelle`
+  private _urlEndpointKPI: string = `${URL_ENDPOINT}/api/kpi`
+  private _urlEndpointKPIMuelles: string = `${URL_ENDPOINT}/api/kpi_muelles`
+  private _urlEndpointPedidosHastaAhora: string = `${URL_ENDPOINT}/api/pedidos_hasta_ahora`
+  private _urlEndpointPedidosDia: string = `${URL_ENDPOINT}/api/pedidos_dia`
+  private _urlEndpointPedidoId: string = `${URL_ENDPOINT}/api/pedido/`
 
 
 

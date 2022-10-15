@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { RetieveUsuarioDto } from '../interfaces/retrieve-usuario-dto';
+import { URL_ENDPOINT } from '../constants';
 
 
 @Injectable({
@@ -11,8 +12,8 @@ import { RetieveUsuarioDto } from '../interfaces/retrieve-usuario-dto';
 })
 export class AutenticacionService {
 
-  private _urlEndpoint: string = "http://localhost:8080/api/login"
-  private _urlEndpointUser: string = "http://localhost:8080/api/user"
+  private _urlEndpoint: string = `${URL_ENDPOINT}/api/login`
+  private _urlEndpointUser: string = `${URL_ENDPOINT}/api/user`
 
 
   constructor(private http: HttpClient, private router: Router) { }

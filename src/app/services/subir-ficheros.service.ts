@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { URL_ENDPOINT } from '../constants';
 
 
 @Injectable({
@@ -7,8 +8,8 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 })
 export class SubirFicherosService {
 
-  _urlUploadMuelles = "http://localhost:8080/api/subir-csv-muelle"
-  _urlUploadPedido = "http://localhost:8080/api/subir-csv-pedido"
+  _urlUploadMuelles = `${URL_ENDPOINT}/api/subir-csv-muelle`
+  _urlUploadPedido = `${URL_ENDPOINT}/api/subir-csv-pedido`
   constructor(private http: HttpClient) { }
 
   subirFicheroMuelles(file: File) {
