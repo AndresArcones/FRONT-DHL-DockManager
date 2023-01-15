@@ -1,1 +1,1 @@
-export const URL_ENDPOINT = "https://backend-proyecto-pgpi.herokuapp.com"
+export const URL_ENDPOINT = "https://back-dhl-dockmananager-production.up.railway.app"
